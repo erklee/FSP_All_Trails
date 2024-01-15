@@ -1,44 +1,81 @@
-.signup {
+.signupform {
     background-color: white;
     box-sizing: border-box;
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 2px solid rgba(0, 0, 0, 0.165);
     width: 460px;
     max-width: 80%;
-    height: 560px;
+    height: 800px;
     z-index: 1;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
     align-items: center; /* Center horizontally */
     justify-content: flex-start; /* Center vertically */
-  }
+    ;
+}
 
-  .outside{
-    background-image: url('../../../images/login_page_background.jpg');
+.signup{
+    background-image: url(../../../images/signupback2.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
-  }
-  
-  #username {
+}
+
+#signupUsername {
+    border-radius: 10px;
+    border: 2px solid gray;
     height: 20px;
-    width: 340px;
+    width: 380px;
+    padding: 10px;
+}
+
+#signpUsername:hover{
+    border-color: black;
+}
+
+#signUpEmail {
+    height: 20px;
+    width: 380px;
     padding: 10px;
     border-radius: 10px;
-  }
-  
-  #password{
+    border: 2px solid gray
+}
+
+#signUpEmail:hover{
+    border-color: black;
+}
+
+
+#signupPassword{
     height: 20px;
-    width: 340px;
+    width: 380px;
     padding: 10px;
     border-radius: 10px;
-  }
-  
-  #button {
+    border: 2px solid gray
+}
+
+#signupPassword:hover{
+    border-color: black;
+}
+
+#signupConfirmPassword{
+    height: 20px;
+    width: 380px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid gray
+}
+
+#signupConfirmPassword:hover{
+    border-color: black;
+}
+
+
+#signupButton {
     background-color: rgb(44, 86, 5);
     color: white;
     font-size: 15px;
@@ -49,26 +86,20 @@
     display: flex;
     align-items: center;
     justify-content: center; /* Center the text horizontally */
-  }
-  
-  #header{
+}
+
+#signupHeader{
     padding: 10px;
     color: rgb(20,40,1);
-    font-size: 30px;
     text-align: center;
-    font: 28px, Percent, Beatrice, Arial, sans-serif;
-  }
-  
-  #header1{
-    padding: 10px;
-    color: rgb(20, 40, 1);
-    font-size: 30px;
-    text-align: center;
-  }
+    font: 28px Percent, Beatrice, Arial, sans-serif;
+}
 
-  .loginfooter {
+.signupErrors{
+    color: red;
+}
+
+.signupfooter{
     background-color: #142800;
-    height: 600px;
-  }
-
-  
+    height: 200px; 
+}

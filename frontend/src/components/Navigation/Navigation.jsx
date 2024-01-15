@@ -23,10 +23,10 @@ function Navigation() {
       sessionLinks = (
         <>
         <div className='innerNavLink'>
-          {/* <NavLink to="/signup" className="inner-signup">Sign Up</NavLink> */}
+      
           <button onClick={demoLogin} id='demologin'>Demo Login</button>
           
-          <NavLink to="/login" className="login1">Log In</NavLink>
+          <NavLink to="/login" className="navlogin">Log In</NavLink>
         </div>
         </>
       );
@@ -36,10 +36,8 @@ function Navigation() {
       <>
         <nav>
           <div className='links'>
-
               <NavLink to="/" id='home'>SomeTrails</NavLink>
               {sessionLinks}
-
           </div>
 
         </nav>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Navigate, NavLink } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import './SignupForm.css';
 
@@ -37,57 +37,60 @@ function SignupForm() {
   };
   return (
     <>
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit} className='signup'>
-        <ul>
-          {errors.map(error => <li key={error}>{error}</li>)}
-        </ul>
+      <div className='signup'>
+        <form onSubmit={handleSubmit} className='signupform'>
           <br />
-          Email
-          <input
-            type="text"
-            value={email}
-            placeholder='Email'
-            id='signup_email'
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-
-
-          Username
-          <input
-            type="text"
-            value={username}
-            placeholder='Username'
-            id='signup_username'
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        <br />
-        <label>
-          Password
-          <input
-            type="password"
-            placeholder='password'
-            id='signup_password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Confirm Password
-          <input
-            type="password"
-            placeholder='placeholder_password'
-            id='placeholder_password'
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </label>
-        <button type="submit">Sign Up</button>
-      </form>
+          <br />
+          <h1 id='signupHeader'> Sign up today to start planning your next adventure</h1>
+          <br />
+          <br />
+            <input
+              type="text"
+              value={email}
+              placeholder='Email'
+              id='signUpEmail'
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <br />
+            <input
+              type="text"
+              value={username}
+              placeholder='Username'
+              id='signupUsername'
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+            <br />
+            <input
+              type="password"
+              placeholder='Password'
+              id='signupPassword'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <br />
+            <input
+              type="password"
+              id='signupConfirmPassword'
+              value={confirmPassword}
+              placeholder='Confirm Password'
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+            <br />
+            <ul className='signupErrors'>
+            {errors.map(error => <li key={error}>{error}</li>)}
+          </ul>
+          <br />
+          <button type="submit" id='signupButton'>Sign Up</button>
+          {/* <br /> */}
+          <p>Already have an account? <NavLink to="/login">Log In</NavLink></p> 
+        </form>
+        </div>
+        <div className='signupfooter'>
+      </div>
     </>
   );
 }

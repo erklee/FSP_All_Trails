@@ -2,43 +2,53 @@
     background-color: white;
     box-sizing: border-box;
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 2px solid rgba(0, 0, 0, 0.165);
     width: 460px;
     max-width: 80%;
-    height: 560px;
+    height: 800px;
     z-index: 1;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
     align-items: center; /* Center horizontally */
     justify-content: flex-start; /* Center vertically */
-  }
+}
 
-  .outside{
-    background-image: url('../../../images/login_page_background.jpg');
+.outside{
+    background-image: url('../../../images/loginback2.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
-  }
-  
-  #username {
+}
+
+#username {
+    border-radius: 10px;
+    border: 2px solid gray;
     height: 20px;
     width: 340px;
     padding: 10px;
     border-radius: 10px;
+}
+#username:hover{
+    border-color: black;
   }
-  
-  #password{
+
+#password{
     height: 20px;
     width: 340px;
     padding: 10px;
     border-radius: 10px;
+    border: 2px solid gray
+}
+
+#password:hover{
+    border-color: black;
   }
-  
-  #button {
+
+#button {
     background-color: rgb(44, 86, 5);
     color: white;
     font-size: 15px;
@@ -49,26 +59,28 @@
     display: flex;
     align-items: center;
     justify-content: center; /* Center the text horizontally */
-  }
-  
-  #header{
+}
+
+#header{
     padding: 10px;
     color: rgb(20,40,1);
     font-size: 30px;
     text-align: center;
     font: 28px, Percent, Beatrice, Arial, sans-serif;
-  }
-  
-  #header1{
+}
+
+#header1{
     padding: 10px;
     color: rgb(20, 40, 1);
     font-size: 30px;
     text-align: center;
-  }
+}
 
-  .loginfooter {
+.loginfooter {
     background-color: #142800;
-    height: 600px;
-  }
+    height: 200px;
+}
 
-  
+#loginerrors{
+    color: red;
+}

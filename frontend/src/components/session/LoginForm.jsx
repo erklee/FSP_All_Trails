@@ -33,47 +33,47 @@ function LoginForm() {
 
   return (
     <>
-    <div className='outside'>
-      <form onSubmit={handleSubmit} className='login'>
-        <br />
-        <br />
-      <h1 id='header'> Welcome back. </h1>
-      <h1 id='header1'>Log in and start exploring.</h1>
-        <ul>
-          {errors.map(error => <li key={error}>{error}</li>)}
-        </ul>
+      <div className='outside'>
+        <form onSubmit={handleSubmit} className='login'>
+          <br />
+          <br />
+        <h1 id='header'> Welcome back. </h1>
+        <h1 id='header1'>Log in and start exploring.</h1>
+          <ul id='loginerrors'>
+            {errors.map(error => <li key={error}>{error}</li>)}
+          </ul>
+            <br />
+            <br />
+            <br />
+            <input
+              id='username'
+              type="text"
+              value={credential}
+              placeholder="Username or Email"
+              onChange={(e) => setCredential(e.target.value)}
+              required
+            />
+        
+        <br/>
+            <br />
+            <br />
+        
+            <input
+              type="password"
+              id='password'
+              value={password}
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
           <br />
           <br />
           <br />
-          <input
-            id='username'
-            type="text"
-            value={credential}
-            placeholder="Username or Email"
-            onChange={(e) => setCredential(e.target.value)}
-            required
-          />
-       
-       <br/>
+          <button type="submit" id='button'>Log In</button>
           <br />
-          <br />
-      
-          <input
-            type="password"
-            id='password'
-            value={password}
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        <br />
-        <br />
-        <br />
-        <button type="submit" id='button'>Log In</button>
-        <br />
-        <p>Don't have an account? <NavLink to="/signup">Sign Up</NavLink> </p> 
-      </form>
-    </div>
+          <p>Don't have an account? <NavLink to="/signup">Sign Up</NavLink> </p> 
+        </form>
+      </div>
     
     <div className='loginfooter'>
     

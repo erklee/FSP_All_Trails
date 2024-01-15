@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: right;
-    padding: 20px;
+    padding: 13px;
 }
 
 #home{
@@ -12,7 +12,7 @@
     font-size: larger;
 
 }
-.login1 {
+.navlogin {
     padding: 11px 15px;
     text-decoration: none;
     color: black;
@@ -22,7 +22,7 @@
     font-size: 13px;
     font-weight:550;
 }
-.login1:hover{
+.navlogin:hover{
     background-color: #d7d7d4;
 }
 
