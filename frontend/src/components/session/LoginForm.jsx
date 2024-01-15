@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Navigate, NavLink } from 'react-router-dom';
 import "./LoginForm.css"
 
 function LoginForm() {
@@ -33,32 +33,54 @@ function LoginForm() {
 
   return (
     <>
-      <h1>Log In</h1>
-      <form onSubmit={handleSubmit}>
+    <div className='outside'>
+      <form onSubmit={handleSubmit} className='login'>
+        <br />
+        <br />
+      <h1 id='header'> Welcome back. </h1>
+      <h1 id='header1'>Log in and start exploring.</h1>
         <ul>
           {errors.map(error => <li key={error}>{error}</li>)}
         </ul>
-        <label>
-          Username or Email
+          <br />
+          <br />
+          <br />
           <input
+            id='username'
             type="text"
             value={credential}
+            placeholder="Username or Email"
             onChange={(e) => setCredential(e.target.value)}
             required
           />
-        </label>
-        <label>
-          Password
+       
+       <br/>
+          <br />
+          <br />
+      
           <input
             type="password"
+            id='password'
             value={password}
+            placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-        </label>
-        <button type="submit">Log In</button>
+        <br />
+        <br />
+        <br />
+        <button type="submit" id='button'>Log In</button>
+        <br />
+        <p>Don't have an account? <NavLink to="/signup">Sign Up</NavLink> </p> 
       </form>
+    </div>
+    
+    <div className='loginfooter'>
+    
+
+    </div>
     </>
+
   );
 }
 
