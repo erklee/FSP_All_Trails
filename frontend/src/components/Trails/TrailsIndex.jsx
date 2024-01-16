@@ -16,7 +16,7 @@ function TrailsIndex(){
     }, [dispatch]);
     return(
         <div>
-        <ul id="trailsWrapper">
+        <ul id="trailsIndexWrapper">
             {trails.map(trail => 
                 <TrailIndexItem key={trail.id} trail={trail}/>)}
         </ul>

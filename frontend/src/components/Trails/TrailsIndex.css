@@ -1,6 +1,8 @@
-#trailsWrapper {
+#trailsIndexWrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 40px;
+    padding: 10px;
     
 }

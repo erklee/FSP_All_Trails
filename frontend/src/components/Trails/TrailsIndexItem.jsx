@@ -2,7 +2,7 @@ import './TrailsIndexItem.css'
 
 function TrailsIndexItem({trail}){
     return (
-        <div className='trailWrapper'>
+        <div id='trailWrapper'>
             <li>{trail.name}</li>
             <li>{trail.description}</li>
         </div>
