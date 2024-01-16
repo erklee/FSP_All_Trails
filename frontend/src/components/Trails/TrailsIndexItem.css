@@ -1,0 +1,13 @@
+.trailWrapper {
+    width: 500px;
+    margin-left: 2px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.trailWrapper:first-child {
+    margin-left: 100px;
+}

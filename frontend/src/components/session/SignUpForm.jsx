@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, NavLink } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import './SignupForm.css';
+import sometrailsicon from '../../../images/sometrailsicon.png'
 
 function SignupForm() {
   const dispatch = useDispatch();
@@ -40,6 +41,10 @@ function SignupForm() {
       <div className='signup'>
         <form onSubmit={handleSubmit} className='signupform'>
           <br />
+          <br />
+        <div>
+          <img src={sometrailsicon} id='signupicon' />
+        </div>
           <br />
           <h1 id='signupHeader'> Sign up today to start planning your next adventure</h1>
           <br />
@@ -85,7 +90,7 @@ function SignupForm() {
           </ul>
           <br />
           <button type="submit" id='signupButton'>Sign Up</button>
-          {/* <br /> */}
+          <br />
           <p>Already have an account? <NavLink to="/login">Log In</NavLink></p> 
         </form>
         </div>

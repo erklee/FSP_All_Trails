@@ -4,6 +4,7 @@ import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import { useDispatch } from 'react-redux';
 import * as sessionActions from "../../store/session"
+import sometrailsicon from '../../../images/sometrailsicon.png'
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
@@ -11,7 +12,7 @@ function Navigation() {
 
     const demoLogin = (e) => {
       e.preventDefault()
-      dispatch(sessionActions.login({credential:'eric@gmail.com', password:"password"}));
+      dispatch(sessionActions.login({credential:'Demo-lition', password:"password"}));
   };
 
     let sessionLinks;
@@ -35,8 +36,10 @@ function Navigation() {
     return (
       <>
         <nav>
-          <div className='links'>
-              <NavLink to="/" id='home'>SomeTrails</NavLink>
+          <div className='navlinks'>
+              <NavLink to="/" id='home' className='home-link'>
+                <img src={sometrailsicon} alt="sometrailsicon" id='homeicon' />
+              SomeTrails</NavLink>
               {sessionLinks}
           </div>
 

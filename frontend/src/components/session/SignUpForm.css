@@ -33,7 +33,7 @@
     padding: 10px;
 }
 
-#signpUsername:hover{
+#signupUsername:hover{
     border-color: black;
 }
 
@@ -103,3 +103,10 @@
     background-color: #142800;
     height: 200px; 
 }
+
+.sometrails-icon {
+    display: block;
+    margin: 0 auto 20px; /* Center the image and add space below it */
+    width: 50px; /* Adjust the width as necessary */
+    height: auto; /* Maintain the aspect ratio */
+  }

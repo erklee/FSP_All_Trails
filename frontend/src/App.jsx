@@ -6,6 +6,7 @@ import LoginForm from './components/session/LoginForm';
 import SignupForm from './components/session/SignUpForm';
 import Navigation from './components/Navigation/Navigation';
 import * as sessionActions from './store/session';
+import TrailsIndex from './components/Trails/Trailsindex';
 // import "./reset.css"
 
 function Layout() {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <h1>Welcome!</h1>
+        element: <TrailsIndex />
       },
       {
         path: "login",
@@ -41,7 +42,11 @@ const router = createBrowserRouter([
       {
         path: "signup",
         element: <SignupForm />
-      }
+      },
+      // {
+      //   path: "trails",
+      //   element: <TrailsIndex />
+      // }
     ]
   }
 ]);

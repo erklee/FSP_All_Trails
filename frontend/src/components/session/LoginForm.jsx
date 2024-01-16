@@ -53,11 +53,8 @@ function LoginForm() {
               onChange={(e) => setCredential(e.target.value)}
               required
             />
-        
-        <br/>
-            <br />
-            <br />
-        
+
+          <br />
             <input
               type="password"
               id='password'
@@ -68,7 +65,7 @@ function LoginForm() {
             />
           <br />
           <br />
-          <br />
+
           <button type="submit" id='button'>Log In</button>
           <br />
           <p>Don't have an account? <NavLink to="/signup">Sign Up</NavLink> </p> 
