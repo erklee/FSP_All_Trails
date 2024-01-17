@@ -15,12 +15,17 @@ function TrailsIndex(){
        dispatch(fetchTrails())
     }, [dispatch]);
     return(
-        <div>
-        <ul id="trailsIndexWrapper">
-            {trails.map(trail => 
-                <TrailIndexItem key={trail.id} trail={trail}/>)}
-        </ul>
-        </div>
+        <>
+            <div>
+                <h1 id="TrailIndexHeader">New York Favorites</h1>
+                <br />
+                <ul id="trailsIndexWrapper">
+                    {trails.map(trail => 
+                        <TrailIndexItem key={trail.id} trail={trail}/>)}
+                </ul>
+            </div>
+        
+        </>
     )
 }
 export default TrailsIndex

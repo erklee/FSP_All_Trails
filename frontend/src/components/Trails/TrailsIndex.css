@@ -1,8 +1,24 @@
-#trailsIndexWrapper {
+#trailsIndexWrapper{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 40px;
-    padding: 10px;
-    
+    gap: 20px;
+    padding: 0px 0px 0px 16px;
 }
+
+#TrailIndexHeader{
+    color: #142800;
+    font: 28px Percent, Beatrice, Arial, sans-serif;
+    margin: 0px 16px;
+}
+
+#TrailIndexHeader {
+    font-family: beatrice-medium;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 31.2px;
+    font-style: normal;
+}
+
+
+
