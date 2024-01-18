@@ -6,6 +6,11 @@ export const SET_TRAIL ="trails/setTrail"
 export const trailsArray = (state => Object.values(state.trail || {}))
 
 
+export const selectTrail = (trailId) => (state) => {
+  return state?.trail[trailId] || null
+}
+
+
 export const setTrails = (trails) => ({
     type: SET_TRAILS,
     trails
@@ -41,7 +46,7 @@ export const fetchTrail = (trailId) => async dispatch => {
          case SET_TRAILS: 
             return {...newState, ...action.trails}
         case SET_TRAIL: 
-            newState[action.trail.id] = action.trail
+            newState[action.trail.trail.id] = action.trail.trail
             return newState
         default:
             return state

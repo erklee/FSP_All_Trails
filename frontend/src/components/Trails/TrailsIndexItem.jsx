@@ -17,6 +17,7 @@ function TrailsIndexItem({trail}){
 
                     <Link to={currentUser? `/trails/${trail.id}`: '/signUp'} style={{ textDecoration: 'none' }}>
                         <p id='hometrailname'>{trail.name}</p>
+
                         <ul id='splashpageTrail'> 
                         <li>&#9733; 4.3 &bull; {trail.length}mi &bull; {trail.difficulty}</li>
                         </ul>

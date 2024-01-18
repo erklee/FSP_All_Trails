@@ -4,12 +4,15 @@
     flex-wrap: wrap;
     gap: 20px;
     padding: 0px 0px 0px 16px;
+    padding-bottom: 100px;
 }
 
 #TrailIndexHeader{
     color: #142800;
     font: 28px Percent, Beatrice, Arial, sans-serif;
     margin: 0px 16px;
+    padding-top: 5%;
+
 }
 
 #TrailIndexHeader {
@@ -20,5 +23,14 @@
     font-style: normal;
 }
 
+#splashbackground {
+    max-width: 100%;
+    height: 90%;
+}
+
+.trailsindexfooter {
+    background-color: #142800;
+    height: 100px;
+}
 
 
