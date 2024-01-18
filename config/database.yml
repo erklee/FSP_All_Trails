@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: some_trails_production
-  username: some_trails
-  password: <%= ENV["SOME_TRAILS_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
