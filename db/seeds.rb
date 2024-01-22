@@ -1,3 +1,4 @@
+require "open-uri"
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -6,7 +7,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-ApplicationRecord.transaction do 
+# ApplicationRecord.transaction do 
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
@@ -24,78 +25,97 @@ ApplicationRecord.transaction do
       email: 'demo@user.io', 
       password: 'password'
     )
+    
 
-    Trail.create!(
+    hemp = Trail.create!(
       name: 'Hempstead Lake Park',
       description: 'This is a beautiful lake side trail. Mainly dirt paths. Kid,pet,and bike friendly. Please do not grill in areas that are not desinated for grilling. Also, please do not swim in the lake.',
       location: 'West Hempstead',
       difficulty: 'Easy',
-      length: 3.2
+      length: 3.2,
+      lat: 40.6831,
+      lon: -73.6431
+
     )
+    hemp.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/hempsteadstatepark.webp"), filename: "hemp.jpeg")
 
     Trail.create!(
       name: "Brooklyn Bridge Walk via Manhattan",
       location: "New York",
       length: 2.4,
       difficulty: "Easy",
-      description: "This is a fun and scenic walk from Manhattan to Brooklyn across one of the country's most famous bridges."
+      description: "This is a fun and scenic walk from Manhattan to Brooklyn across one of the country's most famous bridges.",
+      lat: 40.75989,
+      lon: -74.0949082
     )
 
-    Trail.create!(
+    high_line = Trail.create!(
       name: "High Line Park",
       location: "Manhattan",
       length: 1.2,
       difficulty: "Easy",
-      description: "Experience this 1.2-mile point-to-point trail near New York City, New York. Generally considered an easy route, it takes an average of 21 min to complete. This is a very popular area for walking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. You'll need to leave pups at home — dogs aren't allowed on this trail."
+      description: "Experience this 1.2-mile point-to-point trail near New York City, New York. Generally considered an easy route, it takes an average of 21 min to complete. This is a very popular area for walking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. You'll need to leave pups at home — dogs aren't allowed on this trail.",
+      lat: 40.761655,
+      lon: -74.0965795
     )
+
+    high_line.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/high_line_park.webp"), filename: "highline.webp")
 
     Trail.create!(
       name: "Peaks of Prospect Park",
       location: "Brooklyn",
       length: 1.2,
       difficulty: "Moderate",
-      description: "Experience this 5.0-mile loop trail near New York City, New York. Generally considered a moderately challenging route, it takes an average of 1 h 49 min to complete. This is a very popular area for birding, hiking, and running, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome, but must be on a leash."
+      description: "Experience this 5.0-mile loop trail near New York City, New York. Generally considered a moderately challenging route, it takes an average of 1 h 49 min to complete. This is a very popular area for birding, hiking, and running, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome, but must be on a leash.",
+      lat: 40.7461805,
+      lon: -74.0815221
+
+
     )
 
-    # Trail.create!(
-    #   name: "Central Park East and West Drive Loop",
-    #   location: "Manhattan",
-    #   length: 6.1,
-    #   difficulty: "Easy",
-    #   description: "Explore this 6.1-mile loop trail near New York City, New York. Generally considered an easy route, it takes an average of 2 h 2 min to complete. This is a very popular area for road biking, running, and walking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome, but must be on a leash."
-    # )
+    Trail.create!(
+      name: "Central Park East and West Drive Loop",
+      location: "Manhattan",
+      length: 6.1,
+      difficulty: "Easy",
+      description: "Explore this 6.1-mile loop trail near New York City, New York. Generally considered an easy route, it takes an average of 2 h 2 min to complete. This is a very popular area for road biking, running, and walking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome, but must be on a leash.",
+      lat: 40.7440492,
+      lon: -74.0320115
+    )
 
-    # Trail.create!(
-    #   name: "Stillwell Woods Trail",
-    #   location: "Woodbury",
-    #   length: 4.3,
-    #   difficulty: "Moderate",
-    #   description: "Explore this 6.1-mile loop trail near New York City, New York. Generally considered an easy route, it takes an average of 2 h 2 min to complete. This is a very popular area for road biking, running, and walking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome, but must be on a leash."
-    # )
+    Trail.create!(
+      name: "Stillwell Woods Trail",
+      location: "Woodbury",
+      length: 4.3,
+      difficulty: "Moderate",
+      description: "Explore this 6.1-mile loop trail near New York City, New York. Generally considered an easy route, it takes an average of 2 h 2 min to complete. This is a very popular area for road biking, running, and walking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome, but must be on a leash.",
+      lat: 40.8155816,
+      lon: -73.6077985
 
-    # Trail.create!(
-    #   name: "Blydenburgh County Park Stump Pond Loop",
-    #   location: "Smithtown",
-    #   length: 6.1,
-    #   difficulty: "Easy",
-    #   description: "Head out on this 6.1-mile loop trail near Hauppauge, New York. Generally considered an easy route, it takes an average of 1 h 55 min to complete. This is a very popular area for birding, fishing, and hiking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome and may be off-leash in some areas."
-    # )
+    )
 
-    # Trail.create!(
-    #   name: "Caumsett State Historic Park Perimeter Loop",
-    #   location: "Lloyd Harbor",
-    #   length: 6.1,
-    #   difficulty: "Easy",
-    #   description: "Experience this 5.2-mile loop trail near Huntington, New York. Generally considered an easy route, it takes an average of 1 h 49 min to complete. This is a very popular area for birding, hiking, and mountain biking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. You'll need to leave pups at home — dogs aren't allowed on this trail."
-    # )
+    Trail.create!(
+      name: "Blydenburgh County Park Stump Pond Loop",
+      location: "Smithtown",
+      length: 6.1,
+      difficulty: "Easy",
+      description: "Head out on this 6.1-mile loop trail near Hauppauge, New York. Generally considered an easy route, it takes an average of 1 h 55 min to complete. This is a very popular area for birding, fishing, and hiking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome and may be off-leash in some areas.",
+      lat: 40.7836807,
+      lon: -73.7371351
 
-    # Trail.create!(
-    #   name: "Caumsett State Historic Park Perimeter Loop",
-    #   location: "Lloyd Harbor",
-    #   length: 6.1,
-    #   difficulty: "Easy",
-    #   description: "Experience this 5.2-mile loop trail near Huntington, New York. Generally considered an easy route, it takes an average of 1 h 49 min to complete. This is a very popular area for birding, hiking, and mountain biking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. You'll need to leave pups at home — dogs aren't allowed on this trail."
-    # )
+
+    )
+
+    Trail.create!(
+      name: "Caumsett State Historic Park Perimeter Loop",
+      location: "Lloyd Harbor",
+      length: 6.1,
+      difficulty: "Easy",
+      description: "Experience this 5.2-mile loop trail near Huntington, New York. Generally considered an easy route, it takes an average of 1 h 49 min to complete. This is a very popular area for birding, hiking, and mountain biking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. You'll need to leave pups at home — dogs aren't allowed on this trail.",
+      lat: 40.8571398,
+      lon: -73.5956204
+
+    )
 
     # Trail.create!(
     #   name: "Nassau-Suffolk Trail: Cold Spring Harbor to Uplands Farm Sanctuary",
@@ -208,5 +228,5 @@ ApplicationRecord.transaction do
     end
   
     puts "Done!"
-  end
+  # end
   

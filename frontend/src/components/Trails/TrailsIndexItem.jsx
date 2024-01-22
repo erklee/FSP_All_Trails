@@ -11,13 +11,11 @@ function TrailsIndexItem({trail}){
         <div>
 
             <div id='trailWrapperInfo'>
-                <ul >
+                <ul id='ultrailitemindex'>
                     <Link to={ currentUser ? `/trails/${trail.id}`: '/signUp' }><img src= {hempstead} alt="trail" id="trailimage"/></Link>
-                    {/* <p id='trailname'>{trail.name}</p> <p>{trail.length} mi</p>  */}
-
+                    
                     <Link to={currentUser? `/trails/${trail.id}`: '/signUp'} style={{ textDecoration: 'none' }}>
                         <p id='hometrailname'>{trail.name}</p>
-
                         <ul id='splashpageTrail'> 
                         <li>&#9733; 4.3 &bull; {trail.length}mi &bull; {trail.difficulty}</li>
                         </ul>

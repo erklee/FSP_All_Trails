@@ -6,14 +6,14 @@ import { Link } from "react-router-dom"
 import './TrailsShow.css'
 
 
-function TrailShow(){
+function TrailShow() {
     const {trailId} = useParams()
     
-    // console.log(trailId)
+
     
     const dispatch = useDispatch()
     const trail = useSelector(selectTrail(trailId))
-    // console.log(trail)
+
 
     useEffect(() => {
        dispatch(fetchTrail(trailId))
@@ -21,12 +21,12 @@ function TrailShow(){
 
     return(
         <div>
-        <Link to="/">Back</Link>
-        <p>{trail?.name}</p>
-        <p>{trail?.description}</p>
-        {/* <li key={trail.id} id="showTrailDescription">{trail.name}</li> */}
-        </div>
+            <Link to="/">Back</Link>
+            <p>{trail?.name}</p>
+           <img src={trail?.photoUrl} alt="test" />
 
+            <div className="showfooter"></div>
+        </div>
     )
 
 }

@@ -4,7 +4,8 @@ import { useEffect } from "react"
 import TrailIndexItem from "./TrailsIndexItem"
 import { trailsArray } from "../../store/trail"
 import "./TrailsIndex.css";
-import pinkbackground from "../../../images/background1.avif"
+import splash from "../../../images/indeximage.avif" 
+import { Link } from "react-router-dom"
 
 
 
@@ -18,16 +19,26 @@ function TrailsIndex(){
     }, [dispatch]);
     return(
         <>
-            <img src={pinkbackground} alt="splashbackground" id="splashbackground" />
-            <div>
-                <h1 id="TrailIndexHeader">New York Favorites</h1>
-                <br />
-                <ul id="trailsIndexWrapper">
-                    {trails.map(trail => 
-                        <TrailIndexItem key={trail.id} trail={trail}/>)}
-                </ul>
-            </div>
-
+            <img src={splash} alt="splashbackground" id="splashbackground"/>
+                <div className="parentwrapper">
+                        <div id="newyorkfavorite">
+                            <h1 id="TrailIndexHeader">
+                                <Link to={'trails'} id="newyorkfavoritelink">New York Favorites</Link>
+                            </h1>
+                            
+                        </div>
+                        <br />
+                        <div id="trailsIndexWrapper">
+                            {trails.slice(0,3).map(trail => 
+                                <TrailIndexItem key={trail.id} trail={trail}/>)}
+                            <Link to='/trails' id="showIndexBoxLink">
+                                <div id='showIndexBox'>
+                                <h1 id='showIndexBoxContent'>Show More</h1>
+                                </div>
+                            </Link>
+                        </div>
+    
+                </div>
             <div className='trailsindexfooter'>
 
             </div>

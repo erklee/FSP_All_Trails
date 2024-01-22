@@ -13,8 +13,8 @@
     border-radius: 25px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: flex-start; /* Center vertically */
+    align-items: center;
+    justify-content: flex-start; 
 }
 
 .outside{
@@ -34,7 +34,7 @@
 }
 #username:hover{
     border-color: black;
-  }
+}
 
 #password{
     height: 20px;
@@ -58,7 +58,7 @@
     padding: 10px;
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the text horizontally */
+    justify-content: center; 
 }
 
 #header{
@@ -66,7 +66,7 @@
     color: rgb(20,40,1);
     font-size: 30px;
     text-align: center;
-    font: 28px, Percent, Beatrice, Arial, sans-serif;
+    font-family: beatrice-medium;
 }
 
 #header1{

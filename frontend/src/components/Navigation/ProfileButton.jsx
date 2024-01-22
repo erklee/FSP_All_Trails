@@ -40,10 +40,10 @@ function ProfileButton() {
         <i className="profile-button"/>
         {showMenu && (
         <ul className="profile-dropdown" ref={dropdownRef} onMouseOver={toggleMenu} >
-          {/* <li>{user.username}</li>
-          <li>{user.email}</li> */}
-          {/* implement */}
+
+
           <li onClick={logout} id='logout'>Log Out
+
           </li>
         </ul>
       )}

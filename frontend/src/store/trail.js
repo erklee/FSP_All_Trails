@@ -21,6 +21,20 @@ export const setTrail = (trail) => ({
     trail
 })
 
+export const getTrail = (trailId) => (state) => {
+  if (state.trails) {
+    return state.trails[trailId]
+  }
+  return null
+}
+
+export const getTrails = ( store={}) => {
+  if (store.trails){
+      return Object.values(store.trails)
+  }
+  return []
+}
+
 
 export const fetchTrails = () => async dispatch => {
     const response = await csrfFetch("/api/trails")

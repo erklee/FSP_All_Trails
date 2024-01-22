@@ -20,7 +20,8 @@
     color: rgb(20,40,0);
     text-decoration: none;
     font-weight: light;
-    font-size: x-large;
+    font-size: 26px;
+    font-family: manrope-medium;
 
 }
 .navlogin {
@@ -29,9 +30,9 @@
     color: black;
     background-color:  rgb(237,237,236);
     border-radius: 25px; 
-    font: Manrope,Arial,sans-serif;
+    font-family: manrope-medium;
     font-size: 13px;
-    font-weight:550;
+    font-weight: 600;
 }
 .navlogin:hover{
     background-color: #d7d7d4;
@@ -44,9 +45,9 @@
     border: #64f67b;
     background-color:  #64f67b;
     border-radius: 25px; 
-    font: Manrope,Arial,sans-serif;
+    font-family: manrope-medium;
     font-size: 13px;
-    font-weight:550;
+    font-weight:600;
     display: inline-block;
     margin-right: 5px;
 }

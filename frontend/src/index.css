@@ -7,3 +7,8 @@
     font-family: beatrice-medium;
     src: url("../fonts/beatrice-medium.woff2");
 }
+
+@font-face {
+    font-family: manrope-bold;
+    src: url('../fonts/manrope-bold.woff2');
+}

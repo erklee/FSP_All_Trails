@@ -26,9 +26,9 @@
     flex-direction: column;
     align-items: center; 
     justify-content:flex-start;
-    left: 94%;
+    margin-left: -75px;
+    cursor: pointer;
 }
-
 
  
 
