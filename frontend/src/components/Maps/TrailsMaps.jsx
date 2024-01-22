@@ -9,7 +9,6 @@ function TrailsMapWrapper({ trails }) {
     })
 
 
-
     if (!isLoaded) {
         return <p>Loading</p>
     }
