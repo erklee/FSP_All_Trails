@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import './TrailsShow.css'
+import Ratings from "../Ratings/Ratings"
 
 
 function TrailShow() {
@@ -20,7 +21,7 @@ function TrailShow() {
         <>
             <div className="parent-show-wrapper">
 
-
+            <Ratings />
             </div>
             <Link to="/">Back</Link>
             <p>{trail?.name}</p>
