@@ -43,6 +43,8 @@ function RTrailsIndex() {
             </div>
             <footer className="realtrailindexfooter">
 
+
+
             </footer>
     </>
     )
