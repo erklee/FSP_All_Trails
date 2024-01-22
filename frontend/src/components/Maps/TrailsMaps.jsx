@@ -1,5 +1,5 @@
 import { GoogleMap, MarkerF, useLoadScript } from "@react-google-maps/api";
-import mapPin from "../../../images/google-pin-red.png"
+import mapPin from "../../../images/red-pin48.png"
 
 
 function TrailsMapWrapper({ trails }) {

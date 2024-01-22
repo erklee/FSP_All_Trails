@@ -5,6 +5,8 @@ import TrailsIndexItem from "./TrailsIndexItem";
 import { trailsArray } from "../../store/trail";
 import TrailsMapWrapper from "../Maps/TrailsMaps";
 import './rTrailsIndex.css'
+import closeArrow from "../../../images/close-arrow.png"
+import openArrow from "../../../images/open-arrow.png"
 
 function RTrailsIndex() {
     const trails = useSelector(trailsArray);
@@ -37,7 +39,7 @@ function RTrailsIndex() {
                 </div>
             </div>
             <div id="openSideBar" onClick={toggleSidebar}>
-                <p id="textsidebaropener">{isSidebarOpen ? "<" : ">"}</p>
+                <p id="textsidebaropener">{isSidebarOpen ? <img src={closeArrow} alt="close" /> : <img src={openArrow} alt="open" /> }</p>
             </div>
                     <TrailsMapWrapper key={"map"} trails={trails} />
             </div>

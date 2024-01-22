@@ -9,24 +9,25 @@ import './TrailsShow.css'
 function TrailShow() {
     const {trailId} = useParams()
     
-
-    
     const dispatch = useDispatch()
     const trail = useSelector(selectTrail(trailId))
 
-
     useEffect(() => {
-       dispatch(fetchTrail(trailId))
+        dispatch(fetchTrail(trailId))
     }, [dispatch, trailId]);
 
     return(
-        <div>
+        <>
+            <div className="parent-show-wrapper">
+
+
+            </div>
             <Link to="/">Back</Link>
             <p>{trail?.name}</p>
-           <img src={trail?.photoUrl} alt="test" />
+            <img src={trail?.photoUrl} alt="test" />
 
             <div className="showfooter"></div>
-        </div>
+        </>
     )
 
 }
