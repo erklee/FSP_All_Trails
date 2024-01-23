@@ -12,19 +12,24 @@ require "open-uri"
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
     Trail.destroy_all
+    Review.destroy_all
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
     ApplicationRecord.connection.reset_pk_sequence!('trails')
-  
+    ApplicationRecord.connection.reset_pk_sequence!('reviews')
+
     puts "Creating users..."
+    
     # Create one user with an easy to remember username, email, and password:
     User.create!(
       username: 'Demo-lition', 
       email: 'demo@user.io', 
       password: 'password'
     )
+
+    
     
 
     hemp = Trail.create!(
@@ -208,20 +213,22 @@ require "open-uri"
     #   description: "Explore this 2.2-mile loop trail near Merrick, New York. Generally considered a moderately challenging route, it takes an average of 46 min to complete. This is a very popular area for birding, running, and walking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. You'll need to leave pups at home — dogs aren't allowed on this trail."
     # )
 
-
-
+    20.times do
+      user = User.all.sample  # Select a random user
+      trail = Trail.all.sample  # Select a random trail
     
+      Review.create!(
+        user_id: user.id,
+        trail_id: trail.id,
+        rating: rand(1..5),  # Random rating between 1 and 5
+        review: Faker::Lorem.paragraph(sentence_count: rand(2..5))  # Random review text with 2 to 5 sentences
+      )
+    end
 
-
-
-    
-
-    
-  
     # More users
     10.times do 
       User.create!({
-        username: Faker::Internet.unique.username(specifier: 3),
+        username: Faker::Internet.unique.username(specifier: 6),
         email: Faker::Internet.unique.email,
         password: 'password'
       }) 

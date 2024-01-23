@@ -9,7 +9,7 @@ import * as sessionActions from './store/session';
 import TrailsIndex from './components/Trails/TrailsIndex';
 import TrailsShow from './components/Trails/TrailsShow'
 import RTrailsIndex from './components/Trails/rTrailsIndex';
-// import "./reset.css"
+
 
 function Layout() {
   const dispatch = useDispatch();
