@@ -4,7 +4,7 @@ export const RECEIVE_REVIEWS = 'reviews/RECEIVE_REVIEWS'
 export const RECEIVE_REVIEW = 'reviews/RECEIVE_REVIEW'
 export const REMOVE_REVIEW = 'reviews/REMOVE_REVIEW'
 
-export const receiveReview = (review)=> {
+export const receiveReview = (review) => {
     return {
         type: RECEIVE_REVIEW,
         review
@@ -26,7 +26,7 @@ export const removeReview = (reviewId) =>{
 }
 
 
-export const selectREVIEW = (reviewId) => (state) => {
+export const selectReview = (reviewId) => (state) => {
     return state?.review[reviewId] || null
 }
 
@@ -37,7 +37,7 @@ export const fetchReviews = () => async dispatch => {
 
     if (res.ok) {
         const reviews = await res.json()
-        dispatch(RECEIVE_REVIEWS(reviews))
+        dispatch(receiveReviews(reviews))
     }
 }
 
@@ -50,7 +50,7 @@ export const createReview = (review) => async dispatch => {
         }
     })
     if (res.ok) {
-        const review = await res.json()
+        const {review} = await res.json()
         dispatch(receiveReview(review))
     }
 }
@@ -65,7 +65,7 @@ export const updateReview = (review) => async dispatch => {
     })
 
     if (res.ok) {
-        const review = await res.json()
+        const {review} = await res.json()
         dispatch(receiveReview(review))
     }
 }
@@ -80,7 +80,7 @@ export const deleteReview = (reviewId) => async dispatch => {
     }
 }
 
-const reviewsReducer = (state = {}, action) => {
+const ReviewsReducer = (state = {}, action) => {
     let newState = {...state}
 
     switch (action.type) {
@@ -97,4 +97,4 @@ const reviewsReducer = (state = {}, action) => {
     }
 }
 
-export default reviewsReducer
+export default ReviewsReducer

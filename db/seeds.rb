@@ -10,9 +10,9 @@ require "open-uri"
 # ApplicationRecord.transaction do 
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
+    Review.destroy_all
     User.destroy_all
     Trail.destroy_all
-    Review.destroy_all
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
@@ -28,6 +28,28 @@ require "open-uri"
       email: 'demo@user.io', 
       password: 'password'
     )
+
+    users = [
+      { email: 'alice@example.com', username: 'alice123', password: 'password1' },
+      { email: 'bob@example.com', username: 'bobby456', password: 'password2' },
+      { email: 'carol@example.com', username: 'carol789', password: 'password3' },
+      { email: 'dave@example.com', username: 'dave123', password: 'password4' },
+      { email: 'eve@example.com', username: 'eve456', password: 'password5' },
+      { email: 'frank@example.com', username: 'frank789', password: 'password6' },
+      { email: 'grace@example.com', username: 'grace123', password: 'password7' },
+      { email: 'heidi@example.com', username: 'heidi456', password: 'password8' },
+      { email: 'ivan@example.com', username: 'ivan789', password: 'password9' },
+      { email: 'judy@example.com', username: 'judy123', password: 'password10' }
+    ]
+    
+    users.each do |user|
+      User.create!(
+        email: user[:email],
+        username: user[:username],
+        password: user[:password],
+        session_token: SecureRandom.urlsafe_base64
+      )
+    end
 
     
     
@@ -122,6 +144,32 @@ require "open-uri"
 
     )
 
+
+
+    def generate_realistic_review
+
+      trail_experience = ["amazing", "breathtaking", "challenging", "peaceful", "exciting", "refreshing"].sample
+      trail_condition = ["well-maintained", "scenic", "wild", "rocky", "lush"].sample
+      weather_condition = ["sunny", "cloudy", "windy", "rainy"].sample
+      random_thoughts = ["I can't wait to go back!", "Highly recommended!", "A hidden gem!", "A must-visit trail!", "Great for nature lovers!"].sample
+    
+      "The trail was #{trail_experience}. The trail conditions were #{trail_condition}, and the weather was #{weather_condition}. #{random_thoughts}"
+    end
+    # Seed data for reviews
+    (1..10).each do |user_id|
+      (1..8).each do |trail_id|
+        # Generate at least 3 reviews for each trail
+        (1..3).each do
+          Review.create!(
+            user_id: user_id,
+            trail_id: trail_id,
+            review: generate_realistic_review,
+            rating: rand(1..5)
+          )
+        end
+      end
+    end
+
     # Trail.create!(
     #   name: "Nassau-Suffolk Trail: Cold Spring Harbor to Uplands Farm Sanctuary",
     #   location: "Cold Spring Harbor",
@@ -213,26 +261,26 @@ require "open-uri"
     #   description: "Explore this 2.2-mile loop trail near Merrick, New York. Generally considered a moderately challenging route, it takes an average of 46 min to complete. This is a very popular area for birding, running, and walking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. You'll need to leave pups at home — dogs aren't allowed on this trail."
     # )
 
-    20.times do
-      user = User.all.sample  # Select a random user
-      trail = Trail.all.sample  # Select a random trail
+    # 20.times do
+    #   user = User.all.sample  # Select a random user
+    #   trail = Trail.all.sample  # Select a random trail
     
-      Review.create!(
-        user_id: user.id,
-        trail_id: trail.id,
-        rating: rand(1..5),  # Random rating between 1 and 5
-        review: Faker::Lorem.paragraph(sentence_count: rand(2..5))  # Random review text with 2 to 5 sentences
-      )
-    end
+    #   Review.create!(
+    #     user_id: user.id,
+    #     trail_id: trail.id,
+    #     rating: rand(1..5),  # Random rating between 1 and 5
+    #     review: Faker::Lorem.paragraph(sentence_count: rand(2..5))  # Random review text with 2 to 5 sentences
+    #   )
+    # end
 
     # More users
-    10.times do 
-      User.create!({
-        username: Faker::Internet.unique.username(specifier: 6),
-        email: Faker::Internet.unique.email,
-        password: 'password'
-      }) 
-    end
+    # 10.times do 
+    #   User.create!({
+    #     username: Faker::Internet.unique.username(specifier: 6),
+    #     email: Faker::Internet.unique.email,
+    #     password: 'password'
+    #   }) 
+    # end
   
     puts "Done!"
   # end

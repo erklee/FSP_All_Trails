@@ -1,18 +1,30 @@
 .show-wrapper{
     background-color: white;
     box-sizing: border-box;
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* position: relative; */
+    /* margin-top: 80%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
     border: 2px solid rgba(0, 0, 0, 0.165);
     width: 100vh;
-    height: 100vh;
+    /* min-height: 1000px; */
     border-radius: 25px;
     box-shadow: 0 1px 6px -2px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    /* overflow: hidden; */
+}
+
+.show-divider{
+    height: 60px;
+}
+
+.parent-show-wrapper {
+    background-color: #efefee;
+}
+
+#img-wrapper {
+    position: relative;
 }
 
 #show-image{
@@ -27,14 +39,16 @@
     left: 0;
 }
 
+#show-page-reviews-index{
+    min-height: 10;
+}
 
 
-#show-image-footer{
+/* #show-image-footer{
     background-color: #142800;
     width: 100%;
-    height: 60px;
-    bottom: 40%;
-}
+    height: 20px;
+} */
 
 #show-trail-name{
     font-size: 32px;
@@ -42,16 +56,23 @@
     font-family: beatrice-medium;
     color: #efefee;
     position: absolute;
-    top: 25%; 
-    left: 21%;
-    transform: translate(-50%, -50%);
+    top: 55%; 
+    left: 2%;
+    /* transform: translate(-50%, -50%); */
 }
 
 .show-footer{
     background-color: #142800;
     height: 300px; 
     width: 100%;
-    position: absolute;
-    margin-top: 1080px;
+    /* position: absolute; */
+    /* margin-top: 1080px; */
 
+}
+
+.parent-show-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

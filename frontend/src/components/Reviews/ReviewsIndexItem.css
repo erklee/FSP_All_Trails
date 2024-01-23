@@ -1,0 +1,17 @@
+.reviews-index-parent {
+    position: relative;
+    margin-left: 15px;
+    font-size: 16px;
+    font-family: manrope-medium;
+    color: #142800;
+    
+}
+
+#review-index-item {
+    font-family:  manrope-medium;
+    font-size: 16px;
+    color: #142800;
+    margin-top: 20px;
+    border-bottom: solid gray;
+    padding-bottom: 10px;
+}
