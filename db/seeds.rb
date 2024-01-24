@@ -158,8 +158,7 @@ require "open-uri"
     # Seed data for reviews
     (1..10).each do |user_id|
       (1..8).each do |trail_id|
-        # Generate at least 3 reviews for each trail
-        (1..3).each do
+        (1..2).each do
           Review.create!(
             user_id: user_id,
             trail_id: trail_id,

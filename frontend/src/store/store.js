@@ -3,11 +3,13 @@ import {thunk} from 'redux-thunk';
 import sessionReducer from './session';
 import TrailReducer from './trail';
 import ReviewsReducer from './review';
+import modalsReducer from './modal';
 
 const rootReducer = combineReducers({
     session: sessionReducer,
     trail: TrailReducer,
-    review: ReviewsReducer
+    review: ReviewsReducer,
+    modals: modalsReducer
 });
 
 let enhancer;
