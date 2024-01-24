@@ -2,9 +2,8 @@ import { useParams } from "react-router-dom"
 import { fetchTrail, selectTrail } from "../../store/trail"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
-
+import CreateReview from "../Reviews/CreateReviews"
 import './TrailsShow.css'
-// import Ratings from "../Ratings/Ratings"
 import testImage from '../../../images/high_line_park.webp'
 import ReviewsIndex from "../Reviews/ReviewsIndex"
 
@@ -30,7 +29,11 @@ function TrailShow() {
 
                     </div>
                     <div id="show-image-footer">
-                        <div></div>
+                        <div id="show-create-review">
+                            <CreateReview key={trail?.id} trail={trail}/>
+
+                        </div>
+
                         <div id="show-page-reviews-index">
                             <ReviewsIndex/>
                         </div>
