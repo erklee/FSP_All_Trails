@@ -37,9 +37,9 @@ function Modal({ trail }) {
       <div id="modal">
         <div id="modal-background" />
         <div id="modal-content">
-          <p onClick={handleModalClose}></p>
+          <p onClick={handleModalClose}>Close</p>
           <p>{trail?.name}</p>
-          <Ratings rating={rating} setRating={setRating} />
+          <Ratings rating={rating} setSelectedRating={setRating} />
           <textarea name="reviewform" id="review" placeholder="Type review" type="textarea" 
           maxLength="10000" value={review} onChange={e => setReview(e.target.value)}></textarea>
           <button id="modal-submit-button"

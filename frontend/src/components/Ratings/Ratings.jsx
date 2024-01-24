@@ -2,12 +2,12 @@ import "./Ratings.css";
 import { useState } from "react";
 
 
-const Ratings = ({ rating, setRating }) => {
+const Ratings = ({ rating, setSelectedRating }) => {
   const [hoveredRating, setHoveredRating] = useState(0);
 
 
   const handleStarClick = (rating) => {
-    setRating(rating);
+    setSelectedRating(rating);
   };
 
   const handleStarMouseEnter = (rating) => {
