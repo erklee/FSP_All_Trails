@@ -4,7 +4,7 @@ import "./ReviewsIndexItem.css"
 import { useState } from "react";
 import ReviewDropDown from "./EditDropDown";
 
-function ReviewIndexItem({review}) {
+function ReviewIndexItem({review, trail}) {
     const [visible, setVisible] = useState(false);
     const currentUser = useSelector(state => state?.session.user)
     const canEdit = currentUser.id === review.user_id
