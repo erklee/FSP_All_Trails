@@ -37,13 +37,30 @@ function Modal({ trail }) {
       <div id="modal">
         <div id="modal-background" />
         <div id="modal-content">
-          <p onClick={handleModalClose}>Close</p>
-          <p>{trail?.name}</p>
-          <Ratings rating={rating} setSelectedRating={setRating} />
-          <textarea name="reviewform" id="review" placeholder="Type review" type="textarea" 
+          <p id="modal-close-button" onClick={handleModalClose}>X</p>
+          <br />
+          <br />
+          <h3 id="modal-trail-name">{trail?.name}</h3>
+          <br />
+          <h3 id="modal-rating-string">Rating</h3>
+          <br />
+          <div className="modal-star-rating">
+            <Ratings rating={rating} setSelectedRating={setRating} />
+
+          </div>
+          <br />
+          <h3 id="modal-review-string">Review</h3>
+          <br />
+          <div className="review-form-container">
+          <textarea name="review-form" id="modal-review-form" placeholder="Type review" type="textarea" 
           maxLength="10000" value={review} onChange={e => setReview(e.target.value)}></textarea>
-          <button id="modal-submit-button"
-          onClick={handleSubmit} type="submit">SUBMIT</button>
+            <div className="modal-submit-button-container">
+                <button id="modal-submit-button"
+                  onClick={handleSubmit} type="submit">SUBMIT</button>
+
+            </div>
+
+          </div>
         </div>
       </div>
     );

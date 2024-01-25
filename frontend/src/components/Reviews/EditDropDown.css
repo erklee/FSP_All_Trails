@@ -1,0 +1,33 @@
+.edit-drop-down {
+    background-color: white;
+    border: solid 0.5px rgb(216, 216, 216);
+    border-radius: 15px;
+    height: 50px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+#edit-review-click {
+    cursor: pointer;
+    border-radius: 20px;
+    padding-bottom: 5px;
+}
+
+#edit-review-click:hover {
+    background-color: rgb(222, 220, 220);
+
+}
+
+#delete-review-click {
+    cursor: pointer;
+    border-radius: 20px;
+    padding-bottom: 5px;
+}
+
+#delete-review-click:hover {
+    background-color: rgb(222, 220, 220);
+}

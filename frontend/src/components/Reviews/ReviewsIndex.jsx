@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import ReviewsIndexItem from "./ReviewsIndexItem";
 
 
-function ReviewsIndex() {
+function ReviewsIndex({ trail }) {
     const { trailId } = useParams();
     const dispatch = useDispatch();
     const reviews = useSelector(state => Object.values(state?.review || {}))
@@ -17,7 +17,7 @@ function ReviewsIndex() {
     return (
         <>
             {reviews.reverse().filter(ele => ele.trailId == trailId).map((review) => (
-                <ReviewsIndexItem key={review?.id} review ={review}/>
+                <ReviewsIndexItem key={review?.id} review ={review} trail={trail}/>
             ))}
         </>
     )

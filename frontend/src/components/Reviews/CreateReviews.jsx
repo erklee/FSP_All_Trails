@@ -20,7 +20,7 @@ function CreateReview({ trail }) {
                 <Modal key={trail?.id} trail={trail}/>}
                     
                 </div>
-            <button id="create-review-button" onClick={handleModalShow}> <p id="write-review-button">Write Review</p></button>
+            <p id="create-review-button" onClick={handleModalShow}> <p id="write-review-button">Write Review</p></p>
             </div>
         </>
     )

@@ -16,6 +16,41 @@
     padding-bottom: 10px;
 }
 
-.review-setting-drop-down{
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.edit-ellipsis {
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px; 
+    line-height: 1;
+    color: #000; 
+}
+
+.edit-ellipsis:hover {
+    background-color: lightgray;
+}
+
+.edit-container {
+    position: relative;
+}
+
+
+.review-setting-drop-down {
+    position: absolute;
+    top: 100%; 
+    right: 0;
+    z-index: 10;
 }

@@ -42,9 +42,12 @@ export const TrailsMap = ({trails}) => {
         position: 'absolute'
     }
 
-    const lat = trails[0]?.lat
-    const lon = trails[0]?.lon
-    const center = ({lat: lat, lng: lon})
+    // const lat = trails[0]?.lat
+    // const lon = trails[0]?.lon
+    const center = ({lat: 40.75317602762866, lng: -73.64472673923275})
+
+
+
 
     return (
         <>

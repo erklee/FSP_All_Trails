@@ -55,36 +55,3 @@
 #demologin:hover {
     background-color: #5beb69;
 }
-
-/* 
-.links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: white;
-}
-
-
-
-#home {
-    color: rgb(20,40,0);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: larger;
-}
-
-.login1 {
-    padding: 10px 15px;
-    text-decoration: none;
-    color: white;
-    background-color: forestgreen;
-    border-radius: 15px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background-color 0.3s;
-}
-
-.login1:hover {
-    background-color: darkgreen;
-} */

@@ -24,9 +24,10 @@ function TrailShow() {
                 <h1 className="show-divider"></h1>
                 <div className="show-wrapper">
                     <div id="img-wrapper">
-                    <img src={testImage} alt="highline" id="show-image"/>
+                    <img src={trail.photoUrl} alt="highline" id="show-image"/>
                         <p id="show-trail-name">{trail?.name}</p>
-
+                        <p id="show-trail-difficulty">{trail?.difficulty}</p>
+                        <p id="show-trail-rating"></p>
                     </div>
                     <div id="show-image-footer">
                         <div id="show-create-review">
@@ -35,7 +36,7 @@ function TrailShow() {
                         </div>
 
                         <div id="show-page-reviews-index">
-                            <ReviewsIndex/>
+                            <ReviewsIndex trail={trail}/>
                         </div>
                     </div>
                 </div>

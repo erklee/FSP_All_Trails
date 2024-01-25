@@ -1,0 +1,20 @@
+.create-review-wrapper {
+    display: flex;
+    justify-content: flex-end; 
+
+}
+
+#write-review-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: manrope-medium;
+    color: white;
+    border: 1px solid black;
+    border-radius: 50px;
+    cursor: pointer;
+    height: 45px;
+    width: 150px;
+    max-width: 100%;
+    background-color: #264311;
+}

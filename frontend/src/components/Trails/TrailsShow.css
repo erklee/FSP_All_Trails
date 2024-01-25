@@ -76,3 +76,29 @@
     justify-content: center;
     flex-direction: column;
 }
+
+#show-trail-difficulty {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: manrope-medium;
+    color: #efefee;
+    position: absolute;
+    top: 65%; 
+    left: 2%;
+}
+
+#show-trail-rating{
+    font-size: 16px;
+    /* font-weight: 400; */
+    font-family: manrope-medium;
+    color: #efefee;
+    position: absolute;
+    top: 65%; 
+    left: 2%;
+}
+
+.star {
+    font-size: 20px;
+    margin-right: 5px;
+    color: #64f67b;
+}

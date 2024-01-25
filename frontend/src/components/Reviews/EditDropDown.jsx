@@ -2,6 +2,7 @@ import ModalEdit from "../Modal/ModalEdit"
 import * as reviewActions from "../../store/review"
 import * as modalActions from "../../store/modal"
 import { useDispatch, useSelector } from "react-redux"
+import "./EditDropDown.css"
 
 function ReviewDropDown ({review, trail, visible, setVisible}) {
     const dispatch = useDispatch()
@@ -17,14 +18,16 @@ function ReviewDropDown ({review, trail, visible, setVisible}) {
         e.preventDefault()
         dispatch(modalActions.showModal("editReview"))
     }
-
+    
     return (
         <div>
             <div className="edit-modal-parent">
                 {edit && <ModalEdit review={review} trail={trail} visible={visible} setVisible={setVisible}/>}
             </div>
-            <button id="edit-review-click" onClick={handleModalShow}>Edit</button>
-            <button id="delete-review-click" onClick={handleDelete}>Delete</button>
+            <div className="edit-drop-down">
+                <p id="edit-review-click" onClick={handleModalShow}>Edit</p>
+                <p id="delete-review-click" onClick={handleDelete}>Delete</p>
+            </div>
         </div>
     )
 }
