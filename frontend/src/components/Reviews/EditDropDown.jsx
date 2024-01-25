@@ -23,9 +23,8 @@ function ReviewDropDown ({review, trail, visible, setVisible}) {
             <div className="edit-modal-parent">
                 {edit && <ModalEdit review={review} trail={trail} visible={visible} setVisible={setVisible}/>}
             </div>
-            <p id="edit-review-click" onClick={handleModalShow}>Edit</p>
-
-            <p id="delete-review-click" onClick={handleDelete}>Delete</p>
+            <button id="edit-review-click" onClick={handleModalShow}>Edit</button>
+            <button id="delete-review-click" onClick={handleDelete}>Delete</button>
         </div>
     )
 }

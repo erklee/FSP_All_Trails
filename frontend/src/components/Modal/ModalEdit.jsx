@@ -25,7 +25,7 @@ function EditModal({ review, trail, visible, setVisible }){
     };
 
     const handleModalClose = (e) => {
-        e.preventDeault();
+        e.preventDefault();
         dispatch(modalActions.hideModal("editReview"))
     };
 
@@ -37,7 +37,7 @@ function EditModal({ review, trail, visible, setVisible }){
                 <p>{trail?.name}</p>
                 <Ratings rating={rating} setSelectedRating={setRating} />
                 <textarea name="reviewform" id="review" placeholder="Type review" type="textarea" 
-                maxLength="10000" value={review} onChange={e => setEditReview(e.target.value)}></textarea>
+                maxLength="10000" value={editReview} onChange={e => setEditReview(e.target.value)}></textarea>
                 <button id="modal-submit-button"
                 onClick={handleEditReview} type="submit">SUBMIT</button>
             </div>
