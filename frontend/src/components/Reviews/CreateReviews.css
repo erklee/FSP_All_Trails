@@ -1,6 +1,8 @@
 .create-review-wrapper {
     display: flex;
     justify-content: flex-end; 
+    border-bottom: solid gray;
+    padding-bottom: 5px;
 
 }
 

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
 import CreateReview from "../Reviews/CreateReviews"
 import './TrailsShow.css'
-import testImage from '../../../images/high_line_park.webp'
+
 import ReviewsIndex from "../Reviews/ReviewsIndex"
 
 
@@ -24,12 +24,14 @@ function TrailShow() {
                 <h1 className="show-divider"></h1>
                 <div className="show-wrapper">
                     <div id="img-wrapper">
-                    <img src={trail.photoUrl} alt="highline" id="show-image"/>
+                    <img src={trail?.photoUrl} alt="highline" id="show-image"/>
                         <p id="show-trail-name">{trail?.name}</p>
                         <p id="show-trail-difficulty">{trail?.difficulty}</p>
                         <p id="show-trail-rating"></p>
+                        <p id="show-trail-location">{trail?.location}</p>
                     </div>
                     <div id="show-image-footer">
+                        <div id="show-trail-description"> {trail?.description}</div>
                         <div id="show-create-review">
                             <CreateReview key={trail?.id} trail={trail}/>
 
