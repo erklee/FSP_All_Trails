@@ -8,7 +8,6 @@ function TrailsMapWrapper({ trails }) {
     
     })
 
-
     if (!isLoaded) {
         return <p>Loading</p>
     }
@@ -28,13 +27,11 @@ function TrailsMapWrapper({ trails }) {
 
 export const TrailsMap = ({trails}) => {
 
-
-
     if (!trails) {
         return null
     }
 
-    const pin = { url: mapPin}
+    const pin = { url: mapPin }
 
     const mapContainer = {
         width: '100%',
@@ -42,14 +39,7 @@ export const TrailsMap = ({trails}) => {
         position: 'absolute'
     }
 
-    // const lat = trails[0]?.lat
-    // const lon = trails[0]?.lon
     const center = ({lat: 40.78585773023068, lng: -73.46763094030253})
-
- 
-
-
-
 
     return (
         <>
