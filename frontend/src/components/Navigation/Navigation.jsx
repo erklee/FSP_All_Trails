@@ -5,6 +5,8 @@ import './Navigation.css';
 import { useDispatch } from 'react-redux';
 import * as sessionActions from "../../store/session"
 import sometrailsicon from '../../../images/sometrailsicon.png'
+import gitIcon from "../../../images/git-30.png"
+import linkedIn from "../../../images/linked30.png"
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
@@ -40,6 +42,16 @@ function Navigation() {
               <NavLink to="/" id='home' className='home-link'>
                 <img src={sometrailsicon} alt="sometrailsicon" id='homeicon' />
               SomeTrails</NavLink>
+              <div className='linked-in'>
+              <a href="https://www.linkedin.com/">
+                  <img src={linkedIn} alt="" />
+                </a>
+              </div>
+              <div className='git'>
+                <a href="https://github.com/erklee">
+                  <img src={gitIcon} alt="" />
+                </a>
+              </div>
               {sessionLinks}
           </div>
 

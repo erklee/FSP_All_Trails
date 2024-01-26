@@ -24,11 +24,11 @@ function RTrailsIndex() {
 
     return (
         <>
-            <div id="realTrailIndexHeader"></div>
+            <div id="real-trail-index-header"></div>
                 <div id="realindexWrapper" className={isSidebarOpen ? "sidebaropen" : "sidebarclose"}>
             
             <div id="sidebar" className={isSidebarOpen ? "open" : "close"}>
-                <div id="sidebarHeader"> 
+                <div id="sidebar-header"> 
                     <h1>Curated Trails</h1>
                 </div>
                 
@@ -43,7 +43,7 @@ function RTrailsIndex() {
             </div>
                     <TrailsMapWrapper key={"map"} trails={trails} />
             </div>
-            <footer className="realtrailindexfooter">
+            <footer className="real-trail-index-footer">
 
 
 
