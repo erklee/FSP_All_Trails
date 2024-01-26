@@ -66,15 +66,17 @@ require "open-uri"
     )
     hemp.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/hempsteadstatepark.webp"), filename: "hemp.jpeg")
 
-    Trail.create!(
+    bbvm = Trail.create!(
       name: "Brooklyn Bridge Walk via Manhattan",
       location: "New York",
       length: 2.4,
       difficulty: "Easy",
       description: "This is a fun and scenic walk from Manhattan to Brooklyn across one of the country's most famous bridges.",
-      lat: 40.75989,
-      lon: -74.0949082
+      lat: 40.71226441275163,
+      lon: -74.0046549160047
     )
+
+    bbvm.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/bbwvm.webp"), filename: "bbvm.webpb")
 
     high_line = Trail.create!(
       name: "High Line Park",
@@ -82,67 +84,297 @@ require "open-uri"
       length: 1.2,
       difficulty: "Easy",
       description: "Experience this 1.2-mile point-to-point trail near New York City, New York. Generally considered an easy route, it takes an average of 21 min to complete. This is a very popular area for walking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. You'll need to leave pups at home — dogs aren't allowed on this trail.",
-      lat: 40.761655,
-      lon: -74.0965795
+      lat: 40.73929713337491,
+      lon: -74.00783388818371
+      
     )
 
     high_line.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/high_line_park.webp"), filename: "highline.webp")
 
-    Trail.create!(
+    ppp = Trail.create!(
       name: "Peaks of Prospect Park",
       location: "Brooklyn",
       length: 1.2,
       difficulty: "Moderate",
       description: "Experience this 5.0-mile loop trail near New York City, New York. Generally considered a moderately challenging route, it takes an average of 1 h 49 min to complete. This is a very popular area for birding, hiking, and running, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome, but must be on a leash.",
-      lat: 40.7461805,
-      lon: -74.0815221
-
-
+      lat: 40.672205595910384,
+      lon: -73.96948368656399
     )
 
-    Trail.create!(
+    ppp.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/ppp.webp"), filename: "ppp.webp" )
+
+    cpew = Trail.create!(
       name: "Central Park East and West Drive Loop",
       location: "Manhattan",
       length: 6.1,
       difficulty: "Easy",
       description: "Explore this 6.1-mile loop trail near New York City, New York. Generally considered an easy route, it takes an average of 2 h 2 min to complete. This is a very popular area for road biking, running, and walking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome, but must be on a leash.",
-      lat: 40.7440492,
-      lon: -74.0320115
+      lat: 40.76814264388405,
+      lon: -73.97874664816426
     )
 
-    Trail.create!(
+    cpew.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/cpew.webp"), filename: "cpew.webp")
+
+    swt = Trail.create!(
       name: "Stillwell Woods Trail",
       location: "Woodbury",
       length: 4.3,
       difficulty: "Moderate",
       description: "Explore this 6.1-mile loop trail near New York City, New York. Generally considered an easy route, it takes an average of 2 h 2 min to complete. This is a very popular area for road biking, running, and walking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome, but must be on a leash.",
-      lat: 40.8155816,
-      lon: -73.6077985
+      lat: 40.83173273517657,
+      lon: -73.47738353275581
 
     )
 
-    Trail.create!(
+    swt.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/swt.webp"), filename: "swt.webp")
+
+    bcpspl = Trail.create!(
       name: "Blydenburgh County Park Stump Pond Loop",
       location: "Smithtown",
       length: 6.1,
       difficulty: "Easy",
       description: "Head out on this 6.1-mile loop trail near Hauppauge, New York. Generally considered an easy route, it takes an average of 1 h 55 min to complete. This is a very popular area for birding, fishing, and hiking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome and may be off-leash in some areas.",
-      lat: 40.7836807,
-      lon: -73.7371351
-
+      lat: 40.83511140875805,
+      lon: -73.2201079044744
 
     )
 
-    Trail.create!(
+    bcpspl.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/bcpspl.webp"), filename: "bcpspl.webp")
+
+    cshppl = Trail.create!(
       name: "Caumsett State Historic Park Perimeter Loop",
       location: "Lloyd Harbor",
       length: 6.1,
       difficulty: "Easy",
       description: "Experience this 5.2-mile loop trail near Huntington, New York. Generally considered an easy route, it takes an average of 1 h 49 min to complete. This is a very popular area for birding, hiking, and mountain biking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. You'll need to leave pups at home — dogs aren't allowed on this trail.",
-      lat: 40.8571398,
-      lon: -73.5956204
+      lat: 40.91737637239876,
+      lon: -73.47303311467569
+    )
+    
+    cshppl.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/cshppl.webp"), filename: "cshppl.webp")
+
+    nstcsh = Trail.create!(
+      name: "Nassau-Suffolk Trail: Cold Spring Harbor to Uplands Farm Sanctuary",
+      location: "Cold Spring Harbor State Park",
+      length: 5.2,
+      difficulty: "Moderate",
+      description: "Get to know this 5.2-mile out-and-back trail near Cold Spring Harbor, New York. Generally considered a moderately challenging route, it takes an average of 2 h 21 min to complete. This is a very popular area for birding, cross-country skiing, and hiking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime.",
+      lat: 40.867298907130255,
+      lon: -73.4616047568081
 
     )
+    
+    nstcsh.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/nstcsh.webp"), filename: "nstcsh.webp")
+
+    smt = Trail.create!(
+      name: "Sunken Meadow Trail",
+      location: " Sunken Meadow State Park",
+      length: 3.5,
+      difficulty: "Moderate",
+      description: "Get to know this 3.5-mile loop trail near Kings Park, New York. Generally considered a moderately challenging route, it takes an average of 1 h 24 min to complete. This is a very popular area for hiking and running, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome, but must be on a leash.",
+      lat: 40.90962533775173,
+      lon: -73.2501396387446
+
+    )
+    
+    smt.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/smt.webp"), filename: "smt.webp")
+
+    mlt = Trail.create!(
+      name: "Massapequa Lake Trail",
+      location: " Massapequa Preserve",
+      length: 6.3,
+      difficulty: "Easy",
+      description: "Discover this 6.3-mile out-and-back trail near Massapequa Park, New York. Generally considered an easy route, it takes an average of 1 h 50 min to complete. This is a very popular area for fishing, road biking, and snowshoeing, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. You'll need to leave pups at home — dogs aren't allowed on this trail.",
+      lat: 40.700117558495066,
+      lon: -73.45235149817732
+    )
+    
+    mlt.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/mlt.webp"), filename: "mlt.webp")
+
+    crspp = Trail.create!(
+      name: "Connetquot River State Park Preserve",
+      location: "Bohemia County Park ",
+      length: 3.0,
+      difficulty: "Easy",
+      description: "Get to know this 3.0-mile loop trail near Bohemia, New York. Generally considered an easy route, it takes an average of 53 min to complete. This is a very popular area for hiking, horseback riding, and running, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. You'll need to leave pups at home — dogs aren't allowed on this trail.",
+      lat: 40.749270413537175,
+      lon: -73.15160691961216
+    )
+    
+    crspp.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/crspp.webp"), filename: "csrpp.webp")
+
+    aefp = Trail.create!(
+      name: "Avalon/East Farm Preserve",
+      location: "Avlon Preserve",
+      length: 3.5,
+      difficulty: "Easy",
+      description: "Head out on this 3.5-mile loop trail near St. James, New York. Generally considered an easy route, it takes an average of 1 h 16 min to complete. This is a very popular area for birding, hiking, and running, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome, but must be on a leash.",
+      lat: 40.91157080038437,
+      lon: -73.15178395408341
+    )
+    
+    aefp.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/aefp.webp"), filename: "aefp.webp")
+
+    jkorrp = Trail.create!(
+      name: "Jacqueline Kennedy Onassis Reservoir Running Path",
+      location: "Central Park",
+      length: 1.7,
+      difficulty: "Easy",
+      description: "Explore this 1.7-mile loop trail near New York City, New York. Generally considered an easy route, it takes an average of 31 min to complete. This is a very popular area for birding, running, and walking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. You'll need to leave pups at home — dogs aren't allowed on this trail.",
+      lat: 40.78404265022073,
+      lon: -73.95919765912642
+    )
+    
+    jkorrp.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/jkorrp.webp"), filename: "jkorrp.webp")
+
+    blt = Trail.create!(
+      name: "Belmont Lake Trail",
+      location: "Belmont Lake State Park ",
+      length: 1.4,
+      difficulty: "Easy",
+      description: "Discover this 1.4-mile loop trail near North Babylon, New York. Generally considered an easy route, it takes an average of 25 min to complete. This is a very popular area for birding, hiking, and mountain biking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome, but must be on a leash.",
+      lat: 40.73905440852043,
+      lon: -73.3414714860541
+    )
+    
+    blt.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/blt.webp"), filename: "blt.webp")
+
+    mtp = Trail.create!(
+      name: "Muttontown Preserve",
+      location: "Muttontown Preserve",
+      length: 2.5,
+      difficulty: "Easy",
+      description: "Explore this 2.5-mile loop trail near East Norwich, New York. Generally considered an easy route, it takes an average of 52 min to complete. This is a very popular area for cross-country skiing, hiking, and running, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. You'll need to leave pups at home — dogs aren't allowed on this trail.",
+      lat: 40.83819352457256,
+      lon: -73.53525095621858
+    )
+    
+    mtp.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/mtp.webp"), filename: "mtp.webp")
+
+    ksp = Trail.create!(
+      name: "Kissena Lake Loop",
+      location: "Kissena Park",
+      length: 1.4,
+      difficulty: "Easy",
+      description: "Experience this 1.4-mile loop trail near New York City, New York. Generally considered an easy route, it takes an average of 25 min to complete. This trail is great for birding, hiking, and running, and it's unlikely you'll encounter many other people while exploring. The best times to visit this trail are June through August.",
+      lat: 40.74277430885696,
+      lon: -73.80743892563025
+    )
+    
+    ksp.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/ksp.webp"), filename: "ksp.webp")
+
+    rr = Trail.create!(
+      name: "Ridgewood Reservoir",
+      location: "Highland Park",
+      length: 2.3,
+      difficulty: "Easy",
+      description: "Enjoy this 2.3-mile loop trail near New York City, New York. Generally considered an easy route, it takes an average of 42 min to complete. This is a very popular area for hiking, running, and walking, so you'll likely encounter other people while exploring. The best times to visit this trail are May through June. Dogs are welcome, but must be on a leash.",
+      lat: 40.68633097326282,
+      lon: -73.88946811947463
+
+    )
+    
+    rr.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/rr.webp"), filename: "rr.webp")
+
+    bpl = Trail.create!(
+      name: "Baisley Pond Loop",
+      location: "Baisley Pond Park",
+      length: 1.5,
+      difficulty: "Easy",
+      description: "Explore this 1.5-mile loop trail near New York City, New York. Generally considered an easy route, it takes an average of 26 min to complete. This is a popular trail for birding, road biking, and walking, but you can still enjoy some solitude during quieter times of day. The best times to visit this trail are May through June.",
+      lat: 40.67637495740642,
+      lon: -73.78263371195663
+
+    )
+    
+    bpl.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/bpl.webp"), filename: "bpl.webp")
+
+    kpl = Trail.create!(
+      name: "Kings Point Loop",
+      location: "Kings Point Park ",
+      length: 1.8,
+      difficulty: "Easy",
+      description: "Try this 1.8-mile loop trail near Great Neck, New York. Generally considered an easy route, it takes an average of 32 min to complete. This is a popular trail for birding, running, and walking, but you can still enjoy some solitude during quieter times of day. The best times to visit this trail are April through May.",
+      lat: 40.81016762429327,
+      lon: -73.7517578243423
+
+
+    )
+    
+    kpl.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/kpl.webp"), filename: "kpl.webp")
+
+    cwpl = Trail.create!(
+      name: "Coffin Woods Preserve Loop",
+      location: "Coffin Woods Preserve",
+      length: 1.5,
+      difficulty: "Easy",
+      description: "Get to know this 1.5-mile loop trail near Locust Valley, New York. Generally considered an easy route, it takes an average of 34 min to complete. This is a popular trail for hiking, running, and walking, but you can still enjoy some solitude during quieter times of day. The best times to visit this trail are June through July. Dogs are welcome and may be off-leash in some areas.",
+      lat: 40.87780764486706,
+      lon: -73.58310337727235
+
+    )
+    
+    cwpl.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/cwpl.webp"), filename: "cwpl.webp")
+
+    spplt = Trail.create!(
+      name: "Sands Point Preserve Loop Trail",
+      location: "Sands Point Park And Preserve",
+      length: 1.9,
+      difficulty: "Easy",
+      description: "Explore this 1.9-mile loop trail near Port Washington, New York. Generally considered an easy route, it takes an average of 42 min to complete. This is a popular trail for birding, fishing, and hiking, but you can still enjoy some solitude during quieter times of day. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome, but must be on a leash.",
+      lat: 40.86149208665882,
+      lon: -73.69802366770053
+
+    )
+    
+    spplt.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/spplt.webp"), filename: "spplt.webp")
+
+    cmpt = Trail.create!(
+      name: "Christopher Morley Park Trail",
+      location: "Roslyn Heights",
+      length: 0.9,
+      difficulty: "Easy",
+      description: "Discover this 0.9-mile loop trail near Roslyn Heights, New York. Generally considered an easy route, it takes an average of 20 min to complete. This trail is great for walking, and it's unlikely you'll encounter many other people while exploring. The best times to visit this trail are May through June.",
+      lat: 40.78534470841277,
+      lon: -73.66276465086119
+
+
+    )
+    
+    cmpt.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/cmpt.webp"), filename: "cmpt.webp")
+
+    owg = Trail.create!(
+      name: "Old Westbury Gardens",
+      location: "Old Westbury",
+      length: 1.0,
+      difficulty: "Easy",
+      description: "Experience this 1.0-mile loop trail near Old Westbury, New York. Generally considered an easy route, it takes an average of 21 min to complete. This is a popular trail for walking, but you can still enjoy some solitude during quieter times of day. The trail is open year-round and is beautiful to visit anytime. You'll need to leave pups at home — dogs aren't allowed on this trail.",
+      lat: 40.775280991219354,
+      lon: -73.59632005702863
+
+
+    )
+    
+    owg.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/owg.webp"), filename: "owg.webp")
+
+    appl = Trail.create!(
+      name: "Alley Pond Park Loop",
+      location: "Alley Park",
+      length: 3.2,
+      difficulty: "Moderate",
+      description: "Enjoy this 3.2-mile loop trail near New York City, New York. Generally considered a moderately challenging route, it takes an average of 1 h 8 min to complete. This is a very popular area for hiking, running, and walking, so you'll likely encounter other people while exploring. The best times to visit this trail are April through November",
+      lat: 40.74231272745608,
+      lon: -73.73812598247444
+
+
+
+    )
+    
+    appl.photo.attach(io: URI.open("https://sometrails-seeds.s3.amazonaws.com/FSP_SEED_PIC/appl.webp"), filename: "appl.webp")
+
+
+
+
 
 
 
@@ -157,7 +389,7 @@ require "open-uri"
     end
     # Seed data for reviews
     (1..10).each do |user_id|
-      (1..8).each do |trail_id|
+      (1..23).each do |trail_id|
         (1..2).each do
           Review.create!(
             user_id: user_id,
