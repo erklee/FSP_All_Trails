@@ -14,7 +14,7 @@ function Navigation() {
 
     const demoLogin = (e) => {
       e.preventDefault()
-      dispatch(sessionActions.login({credential:'Demo-lition', password:"password"}));
+      dispatch(sessionActions.login({credential:'demo@user.io', password:"password"}));
   };
 
     let sessionLinks;
