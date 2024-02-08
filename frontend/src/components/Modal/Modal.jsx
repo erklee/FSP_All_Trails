@@ -11,10 +11,16 @@ function Modal({ trail }) {
   const [review, setReview] = useState("");
   const [rating, setRating] = useState(0);
   const currentUser = useSelector((state) => state.session.user)
+  
+  const handleModalClose = (e) => {
+    e.preventDefault()
+    dispatch(modalActions.hideModal("createReview"))
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    
     const newReview = {
       review: {
         user_id: currentUser.id,
@@ -23,14 +29,9 @@ function Modal({ trail }) {
         rating: rating
       }
     }
+    dispatch(modalActions.hideModal("createReview"))
     await dispatch(reviewActions.createReview(newReview));
     await dispatch(reviewActions.fetchReviews());
-    dispatch(modalActions.hideModal("createReview"))
-  }
-
-  const handleModalClose = (e) => {
-    e.preventDefault()
-    dispatch(modalActions.hideModal("createReview"))
   }
 
     return (
