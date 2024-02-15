@@ -25,7 +25,7 @@ class Trail < ApplicationRecord
 
     def self.search_names(query)
         where("lower(name) LIKE ?", "%#{sanitize_sql_like(query.downcase)}%")
-      end
+    end
 
     has_one_attached :photo
 end

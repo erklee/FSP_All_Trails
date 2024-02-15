@@ -7,6 +7,7 @@ import "./TrailsIndex.css";
 import splash from "../../../images/indeximage.avif" 
 import { Link } from "react-router-dom"
 import { fetchReviews } from "../../store/review"
+import Searchbar from "../Searchbar/searchbar"
 
 
 
@@ -23,6 +24,7 @@ function TrailsIndex(){
     return(
         <>
             <img src={splash} alt="splashbackground" id="splashbackground"/>
+                <Searchbar/>
                 <div className="parentwrapper">
                         <div id="newyorkfavorite">
                             <h1 id="TrailIndexHeader">

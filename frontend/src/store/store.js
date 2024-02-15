@@ -4,12 +4,14 @@ import sessionReducer from './session';
 import TrailReducer from './trail';
 import ReviewsReducer from './review';
 import modalsReducer from './modal';
+import searchreducer from './search';
 
 const rootReducer = combineReducers({
     session: sessionReducer,
     trail: TrailReducer,
     review: ReviewsReducer,
-    modals: modalsReducer
+    modals: modalsReducer,
+    search: searchreducer
 });
 
 let enhancer;

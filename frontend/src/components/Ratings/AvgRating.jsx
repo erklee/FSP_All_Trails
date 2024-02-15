@@ -9,7 +9,7 @@ function AvgRating({ trail }) {
         return (
             <h1>No reviews yet! Be the first to make one!</h1>
         )
-    };
+    }
 
     const ratingsum = allreviews.reduce((sum, review) => sum + review.rating, 0)
 

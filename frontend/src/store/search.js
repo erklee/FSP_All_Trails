@@ -26,4 +26,4 @@ const searchreducer = (state = {}, action) => {
             return state
     }
 }
-export default searchReducer
+export default searchreducer

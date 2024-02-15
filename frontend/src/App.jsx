@@ -8,7 +8,9 @@ import Navigation from './components/Navigation/Navigation';
 import * as sessionActions from './store/session';
 import TrailsIndex from './components/Trails/TrailsIndex';
 import TrailsShow from './components/Trails/TrailsShow'
-import RTrailsIndex from './components/Trails/rTrailsIndex';
+import RTrailsIndex from './components/Trails/RTrailsIndex';
+import SearchIndex from './components/Searchbar/SearchIndex';
+
 
 
 function Layout() {
@@ -53,6 +55,10 @@ const router = createBrowserRouter([
         path: "trails/:trailId",
         element: <TrailsShow/>
       },
+      {
+        path: "trails/search",
+        element: <SearchIndex/>
+      }
     ]
   }
 ]);
