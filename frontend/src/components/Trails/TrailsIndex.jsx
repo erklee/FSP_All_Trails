@@ -6,6 +6,7 @@ import { trailsArray } from "../../store/trail"
 import "./TrailsIndex.css";
 import splash from "../../../images/indeximage.avif" 
 import { Link } from "react-router-dom"
+import { fetchReviews } from "../../store/review"
 
 
 
@@ -16,7 +17,9 @@ function TrailsIndex(){
 
     useEffect(() => {
        dispatch(fetchTrails())
+       dispatch(fetchReviews())
     }, [dispatch]);
+    
     return(
         <>
             <img src={splash} alt="splashbackground" id="splashbackground"/>

@@ -4,3 +4,4 @@
         json.photoUrl trail.photo.attached? ? trail.photo.url : nil
     end
 end
+

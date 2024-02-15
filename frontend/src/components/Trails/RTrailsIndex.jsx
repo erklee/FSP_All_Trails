@@ -7,6 +7,7 @@ import TrailsMapWrapper from "../Maps/TrailsMaps";
 import './rTrailsIndex.css'
 import closeArrow from "../../../images/close-arrow.png"
 import openArrow from "../../../images/open-arrow.png"
+import { fetchReviews } from "../../store/review";
 
 function RTrailsIndex() {
     const trails = useSelector(trailsArray);
@@ -19,6 +20,7 @@ function RTrailsIndex() {
     };
 
     useEffect(() => {
+        dispatch(fetchReviews())
         dispatch(fetchTrails())
     }, [dispatch]);
 

@@ -1,10 +1,11 @@
 import './TrailsIndexItem.css'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'  
+import { useSelector } from 'react-redux'
+import AvgRating from '../Ratings/AvgRating' 
 
 function TrailsIndexItem({trail}){
 
-    const currentUser = useSelector(state=> state?.session.user)
+    const currentUser = useSelector(state => state?.session.user)
 
     return (
         <div>
@@ -16,7 +17,7 @@ function TrailsIndexItem({trail}){
                     <Link to={currentUser? `/trails/${trail.id}`: '/signUp'} style={{ textDecoration: 'none' }}>
                         <p id='home-trail-name'>{trail.name}</p>
                         <ul id='splash-page-trail'> 
-                        <li>&#9733; 4.3 &bull; {trail.length}mi &bull; {trail.difficulty}</li>
+                        <li>&#9733; <AvgRating trail={trail}/> &bull; {trail.length}mi &bull; {trail.difficulty}</li>
                         </ul>
                     </Link>
                 </ul>

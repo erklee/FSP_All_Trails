@@ -6,8 +6,8 @@ import ReviewDropDown from "./EditDropDown";
 
 function ReviewIndexItem({review, trail}) {
     const [visible, setVisible] = useState(false);
-    const currentUser = useSelector(state => state?.session.user)
-    const canEdit = currentUser.id === review.userId
+    const currentUser = useSelector(state => state?.session?.user)
+    const canEdit = currentUser?.id === review?.userId
 
 
     const handleDropDown = (e) => {

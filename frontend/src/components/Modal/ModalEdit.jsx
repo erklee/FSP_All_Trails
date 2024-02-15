@@ -20,7 +20,7 @@ function EditModal({ review, trail, visible, setVisible }){
         };
         dispatch(modalActions.hideModal("editReview"));
         await dispatch(reviewActions.updateReview(updateReview));
-        // await dispatch(reviewActions.fetchReviews())
+        await dispatch(reviewActions.fetchReviews())
         setVisible(!visible)
     };
 
