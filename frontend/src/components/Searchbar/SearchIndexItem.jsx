@@ -7,7 +7,7 @@ function SearchIndexItem({result}) {
         <>
         
         
-        <h1>REEEE</h1>
+        <h1>List</h1>
         <p>{result.name}</p>
         </>
     )

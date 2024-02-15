@@ -4,6 +4,7 @@ import * as reviewActions from "../../store/review"
 import { useDispatch, useSelector} from "react-redux"
 import Ratings from "../Ratings/Ratings";
 import "./Modal.css"
+import close from "../../../images/close.png"
 
 
 function Modal({ trail }) {
@@ -38,7 +39,13 @@ function Modal({ trail }) {
       <div id="modal">
         <div id="modal-background" />
         <div id="modal-content">
-          <p id="modal-close-button" onClick={handleModalClose}>X</p>
+          <img
+            id="modal-close-button"
+            onClick={handleModalClose}
+            src={close}
+            alt="Close"
+            style={{ cursor: 'pointer' }} 
+          />
           <br />
           <br />
           <h3 id="modal-trail-name">{trail?.name}</h3>
@@ -53,7 +60,7 @@ function Modal({ trail }) {
           <h3 id="modal-review-string">Review</h3>
           <br />
           <div className="review-form-container">
-          <textarea name="review-form" id="modal-review-form" placeholder="Type review" type="textarea" 
+          <textarea name="review-form" id="modal-review-form" placeholder="Give back to the community. Share your thoughts about the trail so others know what to expect." type="textarea" 
           maxLength="10000" value={review} onChange={e => setReview(e.target.value)}></textarea>
             <div className="modal-submit-button-container">
                 <button id="modal-submit-button"

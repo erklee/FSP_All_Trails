@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { fetchTrailSearch } from "../../store/search"
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
+import magIcon from "../../../images/mag30.png"
 
 
 function Searchbar(){
@@ -18,17 +19,26 @@ function Searchbar(){
         }
     }
 
+    const handleEnter = e => {
+        if (e.key === "Enter") {
+            e.preventDefault()
+            handleSearch()
+            navigate('/trails/search')
+        }
+    }
+
     return (
         <>
             <div className="search-bar">
                 <input 
                 type="text" 
-                placeholder="Search trails..." 
+                placeholder="Find Your Next Favorite Trail" 
                 value={search} 
-                onChange={(e) => setSearch(e.target.value)} 
+                onChange={(e) => setSearch(e.target.value)}
+                onKeyDown={handleEnter} 
                 />
                 {/* <button onClick={handleSearch}>Search</button> */}
-                <Link to="/trails/search" id="searchBarButton"><button onClick={handleSearch} >SEARCH</button></Link>
+                {/* <Link to="/trails/search" id="searchBarButton"></Link> */}
             </div>
         </>
     )

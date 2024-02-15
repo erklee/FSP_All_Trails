@@ -49,6 +49,7 @@
 }
 
 #showIndexBoxLink{
+    padding-top: 15px;
     text-decoration: none;
 }
 
@@ -59,10 +60,10 @@
 }
 
 
-#splashbackground {
+/* #splashbackground {
     max-width: 100%;
     height: 80%;
-}
+} */
 
 #showIndexBox {
     margin-left: 14px;
@@ -92,8 +93,60 @@
 
 .trailsindexfooter {
     background-color: #142800;
-    height: 400px;
-    margin-top: 10%;
+    height: 200px;
+    margin-top: 5%;
+}
+
+.splash-container {
+    position: relative;
+    width: 100%; 
+}
+
+#splashbackground {
+    width: 100%;
+    height: auto; 
+    display: block; 
+}
+
+#search-bar-splash .search-bar input {
+    padding: 24px 24px;
+    font-size: 18px;
+    border-radius: 30px;
+    width: 70vw;
+    max-width: 500px;
+}
+
+
+
+.container-search-welcome {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    position: absolute; 
+    top: 35%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; 
+    z-index: 10;
+}
+
+#text-top-of-search h1 {
+    font-size: 60px; 
+    color: #FFF; 
+    margin-bottom: 20px;
+    font-family: beatice-medium;
+}
+
+#explore-link {
+    text-align: center; 
+    margin-top: 20px; 
+    font-family: manrope-medium; 
+    font-size: 18px; 
+}
+
+#explore-link a {
+    color: #fff; 
+    font-weight: bold; 
 }
 
 

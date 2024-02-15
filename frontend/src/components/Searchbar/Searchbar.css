@@ -3,15 +3,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     gap: 10px; 
     margin: 20px 0;
 }
+
 
 .search-bar input {
     padding: 8px 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 300px; 
+    padding-left: 40px;
 }
 
 .search-bar button {
@@ -21,8 +24,18 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+
 }
+
 
 .search-bar button:hover {
     background-color: #0056b3;
 }
+
+.search-icon {
+    position: absolute;
+    left: 10px; 
+    height: 20px; 
+    width: 20px;
+}
+

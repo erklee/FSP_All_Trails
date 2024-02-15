@@ -17,14 +17,26 @@ function TrailsIndex(){
     const dispatch = useDispatch()
 
     useEffect(() => {
-       dispatch(fetchTrails())
-       dispatch(fetchReviews())
+        dispatch(fetchTrails())
+        dispatch(fetchReviews())
     }, [dispatch]);
     
     return(
         <>
             <img src={splash} alt="splashbackground" id="splashbackground"/>
-                <Searchbar/>
+
+            <div className="container-search-welcome">
+                <div id="text-top-of-search">
+                    <h1>Find Your Outdoors</h1>
+                </div>
+                <div id="search-bar-splash">
+                    <Searchbar/>
+                </div>
+                <div id="explore-link">
+                    <Link to='/trails'>Explore nearby Trails</Link>
+                </div>
+
+            </div>
                 <div className="parentwrapper">
                         <div id="newyorkfavorite">
                             <h1 id="TrailIndexHeader">
