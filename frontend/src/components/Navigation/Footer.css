@@ -1,0 +1,43 @@
+.aboutme-footer{
+    background-color: #142800;
+    min-height: 200px;
+    color: #fff;
+    padding-top: 20px;
+    padding-left: 10px;
+    font-family: manrope-medium;
+    font-size: 20px;
+    align-content: center;
+    justify-content: center;
+
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically if needed */
+    text-align: center; /* Ensure text is centered */
+    padding: 20px 0; /* Vertical padding */
+    width: 100%;
+    bottom: 0; /* Stick to the bottom */
+    position: relative; /* Adjust as needed for your layout */
+    
+}
+
+#about-me-icons-wrapper {
+    padding-top: 5px;
+}
+
+#tech-icon-wrapper{
+    padding-top: 5px;
+}
+#about-me-icons-wrapper a, #tech-icon-wrapper a {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block; 
+}
+
+#about-me-icons-wrapper a:hover, #tech-icon-wrapper a:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 0 8px rgba(0,0,0,0.5); 
+}
+
+.github-icon:hover, .linkedin-icon:hover, .portfolio-icon:hover {
+    opacity: 0.8; 
+}

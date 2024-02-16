@@ -10,7 +10,7 @@ function ProfileButton() {
   const dropdownRef = useRef(null);
   
   const toggleMenu = (e) => {
-    e.stopPropagation(); // Keep click from bubbling up to document and triggering closeMenu
+    e.stopPropagation();
     setShowMenu(true);
   };
   

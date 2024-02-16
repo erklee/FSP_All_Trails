@@ -1,9 +1,9 @@
 import { useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { fetchTrailSearch } from "../../store/search"
 import { useNavigate } from "react-router-dom"
-import { Link } from "react-router-dom"
-import magIcon from "../../../images/mag30.png"
+// import { Link } from "react-router-dom"
+// import magIcon from "../../../images/mag30.png"
 
 
 function Searchbar(){

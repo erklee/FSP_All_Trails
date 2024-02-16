@@ -3,6 +3,7 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, NavLink } from 'react-router-dom';
 import "./LoginForm.css"
+import Footer from '../Navigation/Footer';
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -71,10 +72,8 @@ function LoginForm() {
         </form>
       </div>
     
-    <div className='loginfooter'>
-    
-
-    </div>
+    {/* <div className='loginfooter'></div> */}
+    <Footer/>
     </>
 
   );

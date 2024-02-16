@@ -4,6 +4,7 @@ import { fetchTrails } from "../../store/trail";
 import { fetchReviews } from "../../store/review";
 import SearchIndexItem from "./SearchIndexItem";
 import "./SearchIndex.css"
+import Footer from "../Navigation/Footer";
 
 
 function SearchIndex() {
@@ -22,19 +23,22 @@ function SearchIndex() {
     // }
 
     return (
-    <div>
-            <div className="search-index-header">
-                Search Results: <span id="number">{results?.length}</span>
-            </div>
-                <div className="parent-search-index">
-                    {results?.map((result) => (
-                        <SearchIndexItem result={result} key={result.id}/>
-                    )
-                )}
-
+        <>
+            <div>
+                <div className="search-index-header">
+                    Search Results: <span id="number">{results?.length}</span>
                 </div>
-            <div id="search-index-footer"></div>
-        </div>
+                    <div className="parent-search-index">
+                        {results?.map((result) => (
+                            <SearchIndexItem result={result} key={result.id}/>
+                        )
+                    )}
+
+                    </div>
+                <div id="search-index-footer"></div>
+            </div>
+            <Footer/>
+        </>
     )
 
 

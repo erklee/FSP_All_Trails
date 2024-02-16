@@ -8,6 +8,7 @@ import './rTrailsIndex.css'
 import closeArrow from "../../../images/close-arrow.png"
 import openArrow from "../../../images/open-arrow.png"
 import { fetchReviews } from "../../store/review";
+import Footer from "../Navigation/Footer";
 
 function RTrailsIndex() {
     const trails = useSelector(trailsArray);
@@ -45,11 +46,10 @@ function RTrailsIndex() {
             </div>
                     <TrailsMapWrapper key={"map"} trails={trails} />
             </div>
-            <footer className="real-trail-index-footer">
+            {/* <footer className="real-trail-index-footer"></footer> */}
+            <Footer />
 
 
-
-            </footer>
     </>
     )
 }

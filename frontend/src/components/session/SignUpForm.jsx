@@ -4,6 +4,7 @@ import { Navigate, NavLink } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import './SignupForm.css';
 import sometrailsicon from '../../../images/sometrailsicon.png'
+import Footer from '../Navigation/Footer';
 
 function SignupForm() {
   const dispatch = useDispatch();
@@ -94,8 +95,8 @@ function SignupForm() {
           <p>Already have an account? <NavLink to="/login">Log In</NavLink></p> 
         </form>
         </div>
-        <div className='signupfooter'>
-      </div>
+        {/* <div className='signupfooter'></div> */}
+      <Footer/>
     </>
   );
 }

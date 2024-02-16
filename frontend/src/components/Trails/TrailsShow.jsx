@@ -6,6 +6,7 @@ import CreateReview from "../Reviews/CreateReviews"
 import './TrailsShow.css'
 
 import ReviewsIndex from "../Reviews/ReviewsIndex"
+import Footer from "../Navigation/Footer"
 
 
 function TrailShow() {
@@ -19,7 +20,7 @@ function TrailShow() {
     }, [dispatch, trailId]);
 
     return(
-    
+        <>
             <div className="parent-show-wrapper">
                 <h1 className="show-divider"></h1>
                 <div className="show-wrapper">
@@ -42,8 +43,9 @@ function TrailShow() {
                         </div>
                     </div>
                 </div>
-                <footer className="show-footer"></footer>
             </div>
+                <Footer/>
+        </>
 
             
         

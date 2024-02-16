@@ -9,6 +9,7 @@ import { Link } from "react-router-dom"
 import { fetchReviews } from "../../store/review"
 import Searchbar from "../Searchbar/searchbar"
 import mapsc from '../../../images/map_sc.png'
+import Footer from "../Navigation/Footer"
 
 
 
@@ -58,9 +59,10 @@ function TrailsIndex(){
                         </div>
     
                 </div>
-            <div className='trailsindexfooter'>
+            {/* <div className='trailsindexfooter'>
 
-            </div>
+            </div> */}
+            <Footer />
         
         </>
     )
