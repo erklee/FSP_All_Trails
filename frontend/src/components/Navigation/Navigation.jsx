@@ -43,7 +43,7 @@ function Navigation() {
                 <img src={sometrailsicon} alt="sometrailsicon" id='homeicon' />
               SomeTrails</NavLink>
               <div className='linked-in'>
-              <a href="https://www.linkedin.com/">
+              <a href="https://www.linkedin.com/in/eric-lee-0184aa1a2/">
                   <img src={linkedIn} alt="" />
                 </a>
               </div>

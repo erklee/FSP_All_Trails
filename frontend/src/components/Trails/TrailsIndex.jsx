@@ -8,6 +8,7 @@ import splash from "../../../images/indeximage.avif"
 import { Link } from "react-router-dom"
 import { fetchReviews } from "../../store/review"
 import Searchbar from "../Searchbar/searchbar"
+import mapsc from '../../../images/map_sc.png'
 
 
 
@@ -46,11 +47,12 @@ function TrailsIndex(){
                         </div>
                         <br />
                         <div id="trailsIndexWrapper">
-                            {trails.slice(0,3).map(trail => 
+                            {trails.slice(0,4).map(trail => 
                                 <TrailIndexItem key={trail.id} trail={trail}/>)}
                             <Link to='/trails' id="showIndexBoxLink">
                                 <div id='showIndexBox'>
-                                <h1 id='showIndexBoxContent'>Show More</h1>
+                                    <img src={mapsc} alt="linktomap" />
+                                    
                                 </div>
                             </Link>
                         </div>

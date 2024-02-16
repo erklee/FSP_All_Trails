@@ -1,0 +1,20 @@
+.search-index-header {
+    background-color: #f0f0f0; 
+    color: #333; 
+    text-align: center; 
+    padding: 10px 0;
+    font-size: 20px; 
+    font-weight: bold; 
+    border-bottom: 1px solid #ccc; 
+    width: 100%; 
+    font-family: manrope-medium;
+}
+
+
+#search-index-footer {
+    background-color: #142800;
+    height: 200px; 
+    width: 100%;
+    position: absolute;
+    padding: 20px;
+}
