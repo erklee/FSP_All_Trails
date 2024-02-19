@@ -389,7 +389,7 @@ require "open-uri"
     end
     # Seed data for reviews
     (1..10).each do |user_id|
-      (1..23).each do |trail_id|
+      (1..25).each do |trail_id|
         (1..2).each do
           Review.create!(
             user_id: user_id,

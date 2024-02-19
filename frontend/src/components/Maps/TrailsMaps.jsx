@@ -27,20 +27,21 @@ function TrailsMapWrapper({ trails }) {
 }
 
 export const TrailsMap = ({trails}) => {
+    const [selectedTrail, setSelectedTrail] = useState(null);
 
     if (!trails) {
         return null
     }
 
     const pin = { url: mapPin }
-    const [selectedTrail, setSelectedTrail] = useState(null);
+
     
     const mapContainer = {
         width: '100%',
         height: '100%',
         position: 'absolute'
     }
-
+    
     const center = ({lat: 40.78585773023068, lng: -73.46763094030253})
 
 

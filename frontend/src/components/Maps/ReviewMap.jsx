@@ -51,7 +51,7 @@ export const ReviewMap = ({trail}) => {
         gestureHandling: 'none' 
       };
 
-    const center = ({lat: 40.78585773023068, lng: -73.46763094030253})
+
 
 
 
