@@ -1,11 +1,14 @@
 # SomeTrails
 
+![Alt Text](./frontend/images/intro_fsp.gif)
+
 ## Introduction
 
 SomeTrails is an interactive web application inspired by All Trails, designed for outdoor enthusiasts to discover and review hiking trails. Using the tools of React and Redux on the frontend and Ruby on Rails and PostgreSQL on the backend, SomeTrails offers an engaging platform for users to explore trail information and share their experiences.
 
 [**Live Site**](https://sometrails-bhz9.onrender.com)
-![Alt Text](./frontend/images/intro_fsp.gif)
+
+
 
 ## Technologies Used
 - **Languages**: Ruby, JavaScript, HTML, CSS
@@ -19,7 +22,10 @@ SomeTrails is an interactive web application inspired by All Trails, designed fo
 ## MVPs
 
 
+
 ### Feature: Error Handling
+
+![Alt Text](./frontend/images/signup.png)
 
 - **State Management with React Hooks**: `useState` is ued for handling user input and error messages. This approach keeps our component state localized and easily manageable.
 
@@ -65,6 +71,9 @@ function LoginForm() {
   ```
 
 ### Feature: Google Maps Integration
+
+![Alt Text](./frontend/images/map_fsp.png)
+
 
 - SomeTrail enhances user experience by allowing them to see a preview list of trails as well as a visual location of each trail.
 
