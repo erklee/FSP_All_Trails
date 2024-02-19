@@ -7,6 +7,7 @@ import './TrailsShow.css'
 
 import ReviewsIndex from "../Reviews/ReviewsIndex"
 import Footer from "../Navigation/Footer"
+import AverageRatingReview from "../Ratings/AvgRatingReview"
 
 
 function TrailShow() {
@@ -33,9 +34,9 @@ function TrailShow() {
                     </div>
                     <div id="show-image-footer">
                         <div id="show-trail-description"> {trail?.description}</div>
+                            <AverageRatingReview trail={trail}/>
                         <div id="show-create-review">
                             <CreateReview key={trail?.id} trail={trail}/>
-
                         </div>
 
                         <div id="show-page-reviews-index">

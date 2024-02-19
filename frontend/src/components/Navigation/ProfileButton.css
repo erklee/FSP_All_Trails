@@ -10,6 +10,8 @@
 
 #logout {
     padding: 15px;
+    width: 100%;
+    text-align: center;
 }
 
 .profile-dropdown{
@@ -17,11 +19,11 @@
     box-sizing:content-box;
     position: absolute;
     border: 1px inset rgb(0,0,0);
-    width: 100px;
+    width: 90px;
     max-width: 80%;
     height: 50px;
     z-index: 1;
-    border-radius: 12px;
+    border-radius: 15px;
     display:flex;
     flex-direction: column;
     align-items: center; 
