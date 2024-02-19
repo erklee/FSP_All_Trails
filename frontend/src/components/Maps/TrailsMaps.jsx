@@ -1,4 +1,5 @@
-import { GoogleMap, MarkerF, useLoadScript } from "@react-google-maps/api";
+import { useState } from "react";
+import { GoogleMap, MarkerF, useLoadScript, InfoWindow } from "@react-google-maps/api";
 import mapPin from "../../../images/red-pin48.png"
 
 
@@ -32,7 +33,8 @@ export const TrailsMap = ({trails}) => {
     }
 
     const pin = { url: mapPin }
-
+    const [selectedTrail, setSelectedTrail] = useState(null);
+    
     const mapContainer = {
         width: '100%',
         height: '100%',
@@ -41,12 +43,32 @@ export const TrailsMap = ({trails}) => {
 
     const center = ({lat: 40.78585773023068, lng: -73.46763094030253})
 
+
+
     return (
         <>
             <GoogleMap zoom={10.5} center={center} mapContainerStyle={mapContainer}>
-                {trails?.map((trail) => 
-                <MarkerF position={{ lat: trail?.lat, lng: trail?.lon }} key={trail.id} icon={pin}/>)}
-            </GoogleMap>   
+            {trails?.map((trail) =>
+                <MarkerF
+                    position={{ lat: trail?.lat, lng: trail?.lon }}
+                    key={trail.id}
+                    icon={pin}
+                    onClick={() => setSelectedTrail(trail)} 
+                />
+            )}
+
+            {selectedTrail && (
+                <InfoWindow
+                    position={{ lat: selectedTrail.lat, lng: selectedTrail.lon }}
+                    onCloseClick={() => setSelectedTrail(null)} 
+                >
+                    <div id="info-wrapper">
+                        <h2>{selectedTrail.name}</h2>
+                        <p>{selectedTrail.difficulty}</p>
+                    </div>
+                </InfoWindow>
+            )}
+        </GoogleMap>
         </>
     )
 }

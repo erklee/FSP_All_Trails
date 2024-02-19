@@ -8,7 +8,7 @@ import './TrailsShow.css'
 import ReviewsIndex from "../Reviews/ReviewsIndex"
 import Footer from "../Navigation/Footer"
 import AverageRatingReview from "../Ratings/AvgRatingReview"
-
+import ReviewMapWrapper from "../Maps/ReviewMap"
 
 function TrailShow() {
     const {trailId} = useParams()
@@ -34,6 +34,9 @@ function TrailShow() {
                     </div>
                     <div id="show-image-footer">
                         <div id="show-trail-description"> {trail?.description}</div>
+                        <div id="review-map-wrapper">
+                            <ReviewMapWrapper trail={trail}/>
+                        </div>
                             <AverageRatingReview trail={trail}/>
                         <div id="show-create-review">
                             <CreateReview key={trail?.id} trail={trail}/>

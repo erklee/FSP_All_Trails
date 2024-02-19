@@ -10,34 +10,37 @@
     justify-content: center;
 
     display: flex;
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center children horizontally */
-    justify-content: center; /* Center children vertically if needed */
-    text-align: center; /* Ensure text is centered */
-    padding: 20px 0; /* Vertical padding */
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    padding: 20px 0; 
     width: 100%;
-    bottom: 0; /* Stick to the bottom */
-    position: relative; /* Adjust as needed for your layout */
+    bottom: 0; 
+    position: relative; 
     
 }
 
-#about-me-icons-wrapper {
-    padding-top: 5px;
+#about-me-icons-wrapper a:not(:last-child), #tech-icon-wrapper a:not(:last-child) {
+    margin-right: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
+#about-me-icons-wrapper a:hover, #tech-icon-wrapper a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
 
 #tech-icon-wrapper{
     padding-top: 5px;
 }
-#about-me-icons-wrapper a, #tech-icon-wrapper a {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: inline-block; 
-}
 
-#about-me-icons-wrapper a:hover, #tech-icon-wrapper a:hover {
-    transform: scale(1.1); 
-    box-shadow: 0 0 8px rgba(0,0,0,0.5); 
-}
 
 .github-icon:hover, .linkedin-icon:hover, .portfolio-icon:hover {
     opacity: 0.8; 
+}
+
+#tech-icon-wrapper img:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease; 
 }

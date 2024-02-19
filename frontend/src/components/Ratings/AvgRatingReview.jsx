@@ -11,41 +11,62 @@ function AverageRatingReview({ trail }) {
     const ratingsum = allreviews.reduce((sum, review) => sum + review.rating, 0)
 
     const average = ratingsum / allreviews.length
+
+    function dynamicRatingDistribution( reviews ) {
+        const distribution = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+        reviews.forEach(review => {
+            if (review.rating >= 1 && review.rating <= 5) {
+                distribution[review.rating]++;
+            }
+        });
+    
+        return distribution;
+    }
+
+    const ratingDistribution = dynamicRatingDistribution(allreviews)
     
     return (
         <>
-            <div>
+            {/* <div>
                 <h3 id="rating-review">{average.toFixed(1)}</h3>
                 <h3 id="average-rating-review">Average Rating</h3>
                 <Rating rating={average.toFixed(1)} id='rating-review-stars'/>
                 <h3 id="review-number">{allreviews.length} Reviews</h3>
-                <table class="star-ratings-table">
 
-                    <tbody>
-                        <tr>
-                            <td>5 &#9733;</td>
-                            <td>10</td> 
+                <tbody>
+                    {Object.entries(ratingDistribution).map(([star, count]) => (
+                        <tr key={star}>
+                            <td id='tr-star'>{star} &#9733;</td>
+                            <td>{count}</td>
                         </tr>
-                        <tr>
-                            <td>4 &#9733;</td>
-                            <td>7</td> 
-                        </tr>
-                        <tr>
-                            <td>3 &#9733;</td>
-                            <td>5</td> 
-                        </tr>
-                        <tr>
-                            <td>2 &#9733;</td>
-                            <td>2</td> 
-                        </tr>
-                        <tr>
-                            <td>1 &#9733;</td>
-                            <td>1</td> 
-                        </tr>
-                    </tbody>
-                </table>
+                    ))}
+                </tbody>
 
+            </div> */}
+
+            <div className='parent-average-rating-review'>
+                <div id='avg-rating-review-parent'>
+
+                    <h3 id="rating-review">{average.toFixed(1)}</h3>
+                    <h3 id="average-rating-review">Average Rating</h3>
+                    <div id='rating-component-review'>
+
+                        <Rating rating={average.toFixed(1)} />
+                    </div>
+                    <h3 id="review-number">{allreviews.length} Reviews</h3>
+                </div>
+
+                <div id='rating-distribution'>
+                    {Object.entries(ratingDistribution).reverse().map(([star, count]) => (
+                        <div key={star} className="rating-bar-container">
+                            <span id='span-number'>{star} </span>
+                            <span id='span-star'>&#9733;</span>
+                            <div className="rating-bar" style={{ width: `${count * 10}%` }}></div> {/* Adjust the multiplier as needed */}
+                        </div>
+                    ))}
+                </div>
             </div>
+
         </>
     )
 }
