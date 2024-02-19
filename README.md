@@ -5,6 +5,7 @@
 SomeTrails is an interactive web application inspired by All Trails, designed for outdoor enthusiasts to discover and review hiking trails. Using the tools of React and Redux on the frontend and Ruby on Rails and PostgreSQL on the backend, SomeTrails offers an engaging platform for users to explore trail information and share their experiences.
 
 [**Live Site**](https://sometrails-bhz9.onrender.com)
+![Alt Text](./frontend/images/intro_fsp.gif)
 
 ## Technologies Used
 - **Languages**: Ruby, JavaScript, HTML, CSS
