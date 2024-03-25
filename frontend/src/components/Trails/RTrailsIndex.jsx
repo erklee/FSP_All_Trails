@@ -9,6 +9,7 @@ import closeArrow from "../../../images/close-arrow.png"
 import openArrow from "../../../images/open-arrow.png"
 import { fetchReviews } from "../../store/review";
 import Footer from "../Navigation/Footer";
+import SmallSearchBar from "../Searchbar/SmallSearch";
 
 function RTrailsIndex() {
     const trails = useSelector(trailsArray);
@@ -27,7 +28,9 @@ function RTrailsIndex() {
 
     return (
         <>
-            <div id="real-trail-index-header"></div>
+            <div id="real-trail-index-header">
+                <SmallSearchBar />
+            </div>
                 <div id="realindexWrapper" className={isSidebarOpen ? "sidebaropen" : "sidebarclose"}>
             
             <div id="sidebar" className={isSidebarOpen ? "open" : "close"}>

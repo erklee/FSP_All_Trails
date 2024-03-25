@@ -27,10 +27,10 @@ function SmallSearchBar() {
 
     return (
         <>
-            <div className="search-bar">
+            <div className="search-bar-small">
                 <input 
                 type="text" 
-                placeholder="Find Your Next Favorite Trail" 
+                placeholder="Enter trail or park name" 
                 value={search} 
                 onChange={(e) => setSearch(e.target.value)}
                 onKeyDown={handleEnter} 
