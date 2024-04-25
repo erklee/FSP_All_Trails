@@ -20,9 +20,15 @@ class Api::TrailsController < ApplicationController
         end
     end
 
+    # def search
+    #     # @trails = Trail.search_difficulty(params[:query]) 
+    #     @trails = Trail.search_names(params[:query])
+    #     render :search
+    # end
+
     def search
         @trails = Trail.search_difficulty(params[:query]) 
-        @trails = Trail.search_names(params[:query])
+        @trails = Trail.search_names(params[:query]) if @trails.empty?
         render :search
     end
 

@@ -23,9 +23,9 @@ class Trail < ApplicationRecord
     validates :location, format: { with: /\A[a-zA-Z\s]+\z/, message: "only allows letters and spaces" }
     validates :difficulty, inclusion: { in: %w( Easy Moderate Hard)}
 
-    # def self.search_difficulty(query)
-    #     where("lower(difficulty) LIKE?", "%#{sanitize_sql_like(query.downcase)}%")
-    # end
+    def self.search_difficulty(query)
+        where("lower(difficulty) LIKE?", "%#{sanitize_sql_like(query.downcase)}%")
+    end
 
     def self.search_names(query)
         where("lower(name) LIKE ?", "%#{sanitize_sql_like(query.downcase)}%")
