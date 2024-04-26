@@ -120,3 +120,13 @@
   color: #999;
   font-style: italic;
 }
+
+
+.error-messages {
+  color: red;
+  margin-top: 10px;
+}
+
+.error-message {
+  margin-bottom: 5px;
+}

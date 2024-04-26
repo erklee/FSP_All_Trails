@@ -11,11 +11,13 @@ function Modal({ trail }) {
   const dispatch = useDispatch();
   const [review, setReview] = useState("");
   const [rating, setRating] = useState(0);
+  const [errors, setErrors] = useState([]);
   const currentUser = useSelector((state) => state.session.user)
   
   const handleModalClose = (e) => {
     e.preventDefault()
-    dispatch(modalActions.hideModal("createReview"))
+    dispatch(modalActions.hideModal("createReview"));
+    setErrors([])
   }
 
   const handleSubmit = async (e) => {
@@ -30,10 +32,16 @@ function Modal({ trail }) {
         rating: rating
       }
     }
-    dispatch(modalActions.hideModal("createReview"))
-    await dispatch(reviewActions.createReview(newReview));
-    await dispatch(reviewActions.fetchReviews());
+    try {
+      await dispatch(reviewActions.createReview(newReview));
+      dispatch(modalActions.hideModal("createReview"));
+      await dispatch(reviewActions.fetchReviews());
+      setErrors([]); 
+  } catch (err) {
+    console.log(err)
+      setErrors(err); 
   }
+  } 
 
     return (
       <div id="modal">
@@ -62,6 +70,13 @@ function Modal({ trail }) {
           <div className="review-form-container">
           <textarea name="review-form" id="modal-review-form" placeholder="Give back to the community. Share your thoughts about the trail so others know what to expect." type="textarea" 
           maxLength="10000" value={review} onChange={e => setReview(e.target.value)}></textarea>
+           {errors.length > 0 && (
+                    <div className="error-messages">
+                        {errors.map((error, index) => (
+                            <p key={index} className="error-message">{error}</p>
+                        ))}
+                    </div>
+                )}
             <div className="modal-submit-button-container">
                 <button id="modal-submit-button"
                   onClick={handleSubmit} type="submit">SUBMIT</button>
