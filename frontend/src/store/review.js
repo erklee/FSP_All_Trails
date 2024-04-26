@@ -53,7 +53,8 @@ export const createReview = (review) => async dispatch => {
         const {review} = await res.json()
         dispatch(receiveReview(review))
     } else {
-        console.log("review is less than 3 characters")
+        const errorData = await res.json();
+        throw errorData.errors;
     }
 }
 
@@ -69,6 +70,9 @@ export const updateReview = (review) => async dispatch => {
     if (res.ok) {
         const {review} = await res.json()
         dispatch(receiveReview(review))
+    } else {
+        const errorData = await res.json();
+        throw errorData.errors; 
     }
 }
 
