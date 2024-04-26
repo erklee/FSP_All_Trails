@@ -69,13 +69,6 @@ function Modal({ trail }) {
           <br />
           <div className="modal-star-rating">
             <Ratings rating={rating} setSelectedRating={setRating} />
-            {/* {errors.length > 0 && (
-                    <div className="error-messages">
-                        {errors.map((error, index) => (
-                            <p key={index} className="error-message">{error}</p>
-                        ))}
-                    </div>
-                )} */}
           </div>
           <br />
           <h3 id="modal-review-string">Review</h3>
