@@ -8,9 +8,18 @@ function EditModal({ review, trail, visible, setVisible }){
     const dispatch = useDispatch()
     const [editReview, setEditReview] = useState(review.review);
     const [rating, setRating] = useState(review.rating);
+    const [errors, setErrors] = useState(null);
 
     const handleEditReview = async (e) => {
         e.preventDefault();
+
+        const trimReview = editReview.trim();
+
+        if (trimReview <= 3) {
+          setErrors("Review must be between 3 and 250 chars");
+          return
+        }
+    
         const updateReview = {
             id: review.id,
             user_id: review.user_id,
@@ -27,6 +36,7 @@ function EditModal({ review, trail, visible, setVisible }){
     const handleModalClose = (e) => {
         e.preventDefault();
         dispatch(modalActions.hideModal("editReview"))
+        setErrors([])
     };
 
 
@@ -47,6 +57,7 @@ function EditModal({ review, trail, visible, setVisible }){
             </div>
             <br />
             <h3 id="modal-review-string">Review</h3>
+            {errors &&  <ul id="error-messages">{errors}</ul>}
             <br />
             <div className="review-form-container">
             <textarea name="review-form" id="modal-review-form" placeholder="Type review" type="textarea" 
