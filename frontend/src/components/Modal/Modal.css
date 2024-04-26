@@ -71,6 +71,7 @@
   line-height: 24px;
   margin-left: 30px;
   font-weight: bold;
+  padding-bottom: 10px;
 }
 
 .modal-star-rating {
@@ -122,9 +123,12 @@
 }
 
 
-.error-messages {
+#error-messages {
+  font-size: 20px;
+  font-family: manrope-medium;
+  line-height: 24px;
+  margin-left: 30px;
   color: red;
-  margin-top: 10px;
 }
 
 .error-message {

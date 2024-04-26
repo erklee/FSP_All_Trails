@@ -11,7 +11,7 @@ function Modal({ trail }) {
   const dispatch = useDispatch();
   const [review, setReview] = useState("");
   const [rating, setRating] = useState(0);
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState(null);
   const currentUser = useSelector((state) => state.session.user)
   
   const handleModalClose = (e) => {
@@ -22,6 +22,13 @@ function Modal({ trail }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const trimReview = review.trim();
+
+    if (trimReview <= 3) {
+      setErrors("Review must be between 3 and 250 chars");
+      return
+    }
 
     
     const newReview = {
@@ -62,21 +69,22 @@ function Modal({ trail }) {
           <br />
           <div className="modal-star-rating">
             <Ratings rating={rating} setSelectedRating={setRating} />
-
-          </div>
-          <br />
-          <h3 id="modal-review-string">Review</h3>
-          <br />
-          <div className="review-form-container">
-          <textarea name="review-form" id="modal-review-form" placeholder="Give back to the community. Share your thoughts about the trail so others know what to expect." type="textarea" 
-          maxLength="10000" value={review} onChange={e => setReview(e.target.value)}></textarea>
-           {errors.length > 0 && (
+            {/* {errors.length > 0 && (
                     <div className="error-messages">
                         {errors.map((error, index) => (
                             <p key={index} className="error-message">{error}</p>
                         ))}
                     </div>
-                )}
+                )} */}
+          </div>
+          <br />
+          <h3 id="modal-review-string">Review</h3>
+          {errors &&  <ul id="error-messages">{errors}</ul>}
+          <br />
+          <div className="review-form-container">
+          <textarea name="review-form" id="modal-review-form" placeholder="Give back to the community. Share your thoughts about the trail so others know what to expect." type="textarea" 
+          maxLength="10000" value={review} onChange={e => setReview(e.target.value)}></textarea>
+
             <div className="modal-submit-button-container">
                 <button id="modal-submit-button"
                   onClick={handleSubmit} type="submit">SUBMIT</button>
