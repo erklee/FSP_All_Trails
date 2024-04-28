@@ -8,16 +8,16 @@ function EditModal({ review, trail, visible, setVisible }){
     const dispatch = useDispatch()
     const [editReview, setEditReview] = useState(review.review);
     const [rating, setRating] = useState(review.rating);
-    const [errors, setErrors] = useState(null);
+    const [errors, setErrors] = useState([]);
 
     const handleEditReview = async (e) => {
         e.preventDefault();
 
         const trimReview = editReview.trim();
 
-        if (trimReview <= 3) {
-          setErrors("Review must be between 3 and 250 chars");
-          return
+        if (trimReview.length < 3 || trimReview.length > 250) {
+          setErrors(["Review must be between 3 and 250 characters"]);
+          return;
         }
     
         const updateReview = {
@@ -27,10 +27,20 @@ function EditModal({ review, trail, visible, setVisible }){
             review: editReview,
             rating: rating,
         };
-        dispatch(modalActions.hideModal("editReview"));
-        await dispatch(reviewActions.updateReview(updateReview));
-        await dispatch(reviewActions.fetchReviews())
-        setVisible(!visible)
+
+        try {
+          await dispatch(reviewActions.updateReview(updateReview))
+          dispatch(modalActions.hideModal("editReview"));
+          await dispatch(reviewActions.fetchReviews());
+          setVisible(!visible)
+      } catch (err) {
+        console.log(err)
+          setErrors(err); 
+      }
+        // dispatch(modalActions.hideModal("editReview"));
+        // await dispatch(reviewActions.updateReview(updateReview));
+        // await dispatch(reviewActions.fetchReviews())
+        // setVisible(!visible)
     };
 
     const handleModalClose = (e) => {
@@ -57,7 +67,13 @@ function EditModal({ review, trail, visible, setVisible }){
             </div>
             <br />
             <h3 id="modal-review-string">Review</h3>
-            {errors &&  <ul id="error-messages">{errors}</ul>}
+            {errors.length > 0 && (
+            <div className="error-messages">
+              {errors.map((error, index) => (
+                <p key={index} className="error-message">{error}</p>
+              ))}
+            </div>
+          )}
             <br />
             <div className="review-form-container">
             <textarea name="review-form" id="modal-review-form" placeholder="Type review" type="textarea" 
