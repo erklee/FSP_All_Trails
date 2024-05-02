@@ -9,21 +9,46 @@ import ReviewsIndex from "../Reviews/ReviewsIndex"
 import Footer from "../Navigation/Footer"
 import AverageRatingReview from "../Ratings/AvgRatingReview"
 import ReviewMapWrapper from "../Maps/ReviewMap"
+import { useState } from "react"
 
 function TrailShow() {
     const {trailId} = useParams()
     
     const dispatch = useDispatch()
     const trail = useSelector(selectTrail(trailId))
+    const [weather, setWeather] = useState([])
 
     useEffect(() => {
         dispatch(fetchTrail(trailId))
     }, [dispatch, trailId]);
 
+    useEffect(() => {
+        const showWeather = async () => {
+            try {
+                if (trail && trail?.lat !== undefined && trail?.lon !== undefined) {
+                    const apiKey = import.meta.env.VITE_APP_WEATHER_API_KEY;
+                    const apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${trail?.lat}&lon=${trail?.lon}&appid=${apiKey}`
+                    const response = await fetch(apiUrl)
+
+                    const weatherData = await response.json();
+                    if (weatherData && weatherData?.daily) {
+                        setWeather(weatherData?.daily)
+              
+                    }
+                }
+            } catch (error) {
+                console.error('weather not fetching')
+            }
+        }
+        showWeather()
+    }, [trail])
+
+    console.log(weather)
     return(
         <>
             <div className="parent-show-wrapper">
                 <h1 className="show-divider"></h1>
+                {/* <div>{Object.values(weather)}</div> */}
                 <div className="show-wrapper">
                     <div id="img-wrapper">
                     <img src={trail?.photoUrl} alt="highline" id="show-image"/>
