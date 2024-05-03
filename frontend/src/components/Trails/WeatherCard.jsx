@@ -3,7 +3,7 @@ import './WeatherCard.css'
 function WeatherCard({ day }) {
     return (
         <div className="weather-card">
-            <h3>{new Date(day.dt * 1000).toLocaleDateString()}</h3> {/* Display the date */}
+            <h3>{new Date(day.dt * 1000).toLocaleDateString()}</h3> 
             <img src={`http://openweathermap.org/img/wn/${day.weather[0].icon}.png`} alt={day.weather[0].description} />
             <p>Temp: {day.temp.day} °C</p>
             <p>Weather: {day.weather[0].main}</p>

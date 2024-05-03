@@ -34,7 +34,7 @@ function TrailShow() {
 
                     const weatherData = await response.json();
                     if (weatherData && weatherData?.daily) {
-                        setWeather(weatherData?.daily)
+                        setWeather(weatherData?.daily.slice(0,5))
               
                     }
                 }
@@ -47,32 +47,6 @@ function TrailShow() {
 
     // console.log(weather)
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    initialSlide: 1
-                }
-            }
-        ]
-    };
     return(
         <>
             <div className="parent-show-wrapper">
@@ -86,11 +60,11 @@ function TrailShow() {
                         <p id="show-trail-rating"></p>
                         <p id="show-trail-location">{trail?.location}</p>
                     </div>
-                    <div className="weather-cards-container">
+                    {/* <div className="weather-cards-container">
                         {weather.map(day => (
                             <WeatherCard key={day.dt} day={day} />
                         ))}
-                    </div>
+                    </div> */}
                     <div id="show-image-footer">
                         <div id="show-trail-description"> {trail?.description}</div>
                         <div id="review-map-wrapper">
@@ -100,7 +74,11 @@ function TrailShow() {
                         <div id="show-create-review">
                             <CreateReview key={trail?.id} trail={trail}/>
                         </div>
-
+                        <div className="weather-cards-container">
+                        {weather.map(day => (
+                            <WeatherCard key={day.dt} day={day} />
+                        ))}
+                    </div>
                         <div id="show-page-reviews-index">
                             <ReviewsIndex trail={trail}/>
                         </div>
