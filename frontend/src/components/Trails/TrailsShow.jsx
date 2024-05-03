@@ -29,7 +29,7 @@ function TrailShow() {
             try {
                 if (trail && trail?.lat !== undefined && trail?.lon !== undefined) {
                     const apiKey = import.meta.env.VITE_APP_WEATHER_API_KEY;
-                    const apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${trail?.lat}&lon=${trail?.lon}&appid=${apiKey}`
+                    const apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${trail?.lat}&lon=${trail?.lon}&units=imperial&appid=${apiKey}`
                     const response = await fetch(apiUrl)
 
                     const weatherData = await response.json();
@@ -60,13 +60,14 @@ function TrailShow() {
                         <p id="show-trail-rating"></p>
                         <p id="show-trail-location">{trail?.location}</p>
                     </div>
-                    {/* <div className="weather-cards-container">
-                        {weather.map(day => (
-                            <WeatherCard key={day.dt} day={day} />
-                        ))}
-                    </div> */}
+
                     <div id="show-image-footer">
                         <div id="show-trail-description"> {trail?.description}</div>
+                        <div className="weather-cards-container">
+                            {weather.map(day => (
+                                <WeatherCard key={day.dt} day={day} />
+                            ))}
+                        </div>
                         <div id="review-map-wrapper">
                             <ReviewMapWrapper trail={trail}/>
                         </div>
@@ -74,11 +75,7 @@ function TrailShow() {
                         <div id="show-create-review">
                             <CreateReview key={trail?.id} trail={trail}/>
                         </div>
-                        <div className="weather-cards-container">
-                        {weather.map(day => (
-                            <WeatherCard key={day.dt} day={day} />
-                        ))}
-                    </div>
+
                         <div id="show-page-reviews-index">
                             <ReviewsIndex trail={trail}/>
                         </div>
