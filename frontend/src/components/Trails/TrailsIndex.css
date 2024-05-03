@@ -12,7 +12,7 @@
 
 #trailsIndexWrapper{
     display: flex;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     justify-content: space-between;
     justify-content: center;
     padding-bottom: 20px;
@@ -67,6 +67,7 @@
     font-weight: 700;
     margin-left: 20px;
     color: #142800;
+    padding-top: 10px;
 }
 
 #splashFooter{
