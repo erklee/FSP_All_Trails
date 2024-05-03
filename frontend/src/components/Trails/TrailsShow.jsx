@@ -11,6 +11,8 @@ import AverageRatingReview from "../Ratings/AvgRatingReview"
 import ReviewMapWrapper from "../Maps/ReviewMap"
 import { useState } from "react"
 
+import WeatherCard from "./WeatherCard"
+
 function TrailShow() {
     const {trailId} = useParams()
     
@@ -37,11 +39,11 @@ function TrailShow() {
                     }
                 }
             } catch (error) {
-                console.error('weather not fetching')
+                console.error('weather not fetching', error)
             }
         }
         showWeather()
-    }, [trail])
+    }, [trail?.lat, trail?.lon])
 
     console.log(weather)
     return(
@@ -56,6 +58,11 @@ function TrailShow() {
                         <p id="show-trail-difficulty">{trail?.difficulty}</p>
                         <p id="show-trail-rating"></p>
                         <p id="show-trail-location">{trail?.location}</p>
+                    </div>
+                    <div className="weather-cards-container">
+                        {weather.map(day => (
+                            <WeatherCard key={day.dt} day={day} />
+                        ))}
                     </div>
                     <div id="show-image-footer">
                         <div id="show-trail-description"> {trail?.description}</div>
