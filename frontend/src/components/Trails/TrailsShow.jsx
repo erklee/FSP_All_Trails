@@ -11,6 +11,8 @@ import AverageRatingReview from "../Ratings/AvgRatingReview"
 import ReviewMapWrapper from "../Maps/ReviewMap"
 import { useState } from "react"
 
+import WeatherCard from "./WeatherCard"
+
 function TrailShow() {
     const {trailId} = useParams()
     
@@ -27,23 +29,24 @@ function TrailShow() {
             try {
                 if (trail && trail?.lat !== undefined && trail?.lon !== undefined) {
                     const apiKey = import.meta.env.VITE_APP_WEATHER_API_KEY;
-                    const apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${trail?.lat}&lon=${trail?.lon}&appid=${apiKey}`
+                    const apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${trail?.lat}&lon=${trail?.lon}&units=imperial&appid=${apiKey}`
                     const response = await fetch(apiUrl)
 
                     const weatherData = await response.json();
                     if (weatherData && weatherData?.daily) {
-                        setWeather(weatherData?.daily)
+                        setWeather(weatherData?.daily.slice(0,5))
               
                     }
                 }
             } catch (error) {
-                console.error('weather not fetching')
+                console.error('weather not fetching', error)
             }
         }
         showWeather()
-    }, [trail])
+    }, [trail?.lat, trail?.lon])
 
-    console.log(weather)
+    // console.log(weather)
+
     return(
         <>
             <div className="parent-show-wrapper">
@@ -57,8 +60,14 @@ function TrailShow() {
                         <p id="show-trail-rating"></p>
                         <p id="show-trail-location">{trail?.location}</p>
                     </div>
+
                     <div id="show-image-footer">
                         <div id="show-trail-description"> {trail?.description}</div>
+                        <div className="weather-cards-container">
+                            {weather.map(day => (
+                                <WeatherCard key={day.dt} day={day} />
+                            ))}
+                        </div>
                         <div id="review-map-wrapper">
                             <ReviewMapWrapper trail={trail}/>
                         </div>

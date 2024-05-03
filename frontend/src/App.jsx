@@ -10,6 +10,8 @@ import TrailsIndex from './components/Trails/TrailsIndex';
 import TrailsShow from './components/Trails/TrailsShow'
 import RTrailsIndex from './components/Trails/RTrailsIndex';
 import SearchIndex from './components/Searchbar/SearchIndex';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 
 
