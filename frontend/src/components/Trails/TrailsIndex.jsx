@@ -53,8 +53,10 @@ function TrailsIndex(){
                             <Link to='/trails' id="showIndexBoxLink">
                                 <div id='showIndexBox'>
                                     <img src={mapsc} alt="linktomap" />
-                                    
                                 </div>
+                                <Link to='/trails' id="text-link-map">
+                                    Show More
+                                </Link>
                             </Link>
                         </div>
     
