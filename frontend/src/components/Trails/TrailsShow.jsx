@@ -82,7 +82,7 @@ function TrailShow() {
                     </div>
                 </div>
             </div>
-                <Footer/>
+            <Footer/>
         </>
 
             
