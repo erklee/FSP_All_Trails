@@ -43,6 +43,9 @@ function Navigation() {
               SomeTrails</NavLink>
               {sessionLinks}
           </div>
+          <a href="https://github.com/erklee">Github</a>
+          <a href="https://www.linkedin.com/in/eric-lee-0184aa1a2/">LinkedIn</a>
+          <a href="https://erklee.github.io/Portfolio/">Portfolio</a>
 
         </nav>
       </>
