@@ -49,7 +49,7 @@ function RTrailsIndex() {
             </div>
                 <TrailsMapWrapper key={"map"} trails={trails} />
             </div>
-        
+            <br />
             <Footer/>
 
 
