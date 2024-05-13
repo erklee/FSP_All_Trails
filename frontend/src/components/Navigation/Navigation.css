@@ -5,10 +5,15 @@
     padding: 10px;
 }
 
-.home-link {
+.home-link, .social-links {
     display: flex;
     align-items: center;
-    text-decoration: none;
+    margin-right: 20px;
+}
+
+.primary-nav {
+    display: flex;
+    align-items: center;
 }
 
 #homeicon {
@@ -54,4 +59,15 @@
 
 #demologin:hover {
     background-color: #5beb69;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    font-family: manrope-medium;
+}
+.social-links a {
+    margin-right: 10px; 
+    color: #142800; 
+    text-decoration: none;
 }
