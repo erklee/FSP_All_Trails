@@ -49,13 +49,12 @@ function Navigation() {
                 <a href="https://www.linkedin.com/in/eric-lee-0184aa1a2/" id='linkedin-nav'>LinkedIn</a>
                 <a href="https://erklee.github.io/Portfolio/" id='portfolio-nav'>Portfolio</a>
               </div>
+            </div>
               <div className='session-links'>
-
                 {sessionLinks}
               </div>
-            </div>
           </div>
-          {/* {sessionLinks} */}
+
         </nav>
       </>
     );

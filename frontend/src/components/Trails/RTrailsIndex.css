@@ -5,7 +5,9 @@
     
 }
 
-
+body, html {
+    overflow-x: hidden;
+}
 
 #openSideBar {
     cursor: pointer;
@@ -98,11 +100,7 @@
 
 
 
-.real-trail-index-footer{
-    height: 200px;
-    background-color: #142800;
-    max-width: 100%;
-}
+
 
 /* #mapcontainer{
     position: absolute;

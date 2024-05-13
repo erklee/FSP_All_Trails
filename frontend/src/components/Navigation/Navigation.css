@@ -71,3 +71,7 @@
     color: #142800; 
     text-decoration: none;
 }
+.session-links {
+    display: flex;
+    align-items: center;
+}
