@@ -47,10 +47,10 @@ function RTrailsIndex() {
             <div id="openSideBar" onClick={toggleSidebar}>
                 <p id="textsidebaropener">{isSidebarOpen ? <img src={closeArrow} alt="close" /> : <img src={openArrow} alt="open" /> }</p>
             </div>
-                    <TrailsMapWrapper key={"map"} trails={trails} />
+                <TrailsMapWrapper key={"map"} trails={trails} />
             </div>
-        
-            <Footer />
+            <br />
+            <Footer/>
 
 
     </>
