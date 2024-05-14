@@ -43,7 +43,7 @@ function TrailShow() {
             }
         }
         showWeather()
-    }, [trail?.lat, trail?.lon])
+    }, [trail?.lat, trail?.lon, trail])
 
     // console.log(weather)
 
