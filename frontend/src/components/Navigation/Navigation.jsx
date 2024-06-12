@@ -38,10 +38,21 @@ function Navigation() {
       <>
         <nav>
           <div className='navlinks'>
+            <div className='primary-nav'>
+
               <NavLink to="/" id='home' className='home-link'>
                 <img src={sometrailsicon} alt="sometrailsicon" id='homeicon' />
               SomeTrails</NavLink>
-              {sessionLinks}
+              <div className='social-links'>
+
+                <a href="https://github.com/erklee" id='github-nav'>Github</a>
+                <a href="https://www.linkedin.com/in/eric-lee-0184aa1a2/" id='linkedin-nav'>LinkedIn</a>
+                <a href="https://erklee.github.io/Portfolio/" id='portfolio-nav'>Portfolio</a>
+              </div>
+            </div>
+              <div className='session-links'>
+                {sessionLinks}
+              </div>
           </div>
 
         </nav>

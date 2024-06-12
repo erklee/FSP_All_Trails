@@ -13,6 +13,7 @@
 #trailsIndexWrapper{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     justify-content: center;
     padding-bottom: 20px;
 }
@@ -35,7 +36,6 @@
     padding-top: 40px;
     text-decoration: none;
 
-
 }
 
 #showIndexBoxContent {
@@ -55,6 +55,19 @@
 #showIndexBoxLink{
     padding-top: 15px;
     text-decoration: none;
+    color: #142800;
+    font-family: manrope-medium;
+    font-weight: 700;
+}
+
+#text-link-map{
+    text-decoration: none;
+    font-family: manrope-medium;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 20px;
+    color: #142800;
+    padding-top: 10px;
 }
 
 #splashFooter{
