@@ -110,3 +110,16 @@
     width: 50px; /* Adjust the width as necessary */
     height: auto; /* Maintain the aspect ratio */
   }
+
+#signup-demo-login{
+    background-color: rgb(44, 86, 5);
+    color: white;
+    font-size: 15px;
+    border-radius: 20px;
+    height: 40px;
+    width: 340px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
