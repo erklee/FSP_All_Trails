@@ -68,7 +68,7 @@ function LoginForm() {
 
           <button type="submit" id='button'>Log In</button>
           <br />
-          <p>Dont have an account? <NavLink to="/signup">Sign Up</NavLink> </p> 
+          <p id='dont-have-account'>Dont have an account? <NavLink to="/signup">Sign up here!</NavLink> </p> 
         </form>
       </div>
     

@@ -100,7 +100,7 @@ function SignupForm() {
           <br />
           <button onClick={demoLogin} id='signup-demo-login'>Try a Demo!</button>
           <br />
-          <p>Already have an account? <NavLink to="/login">Log In</NavLink></p> 
+          <p id='already'>Already have an account? <NavLink to="/login">Log In</NavLink></p> 
           <br />
         </form>
         </div>

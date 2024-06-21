@@ -112,7 +112,7 @@
   }
 
 #signup-demo-login{
-    background-color: rgb(44, 86, 5);
+    background-color: rgb(39, 32, 32);
     color: white;
     font-size: 15px;
     border-radius: 20px;
@@ -122,4 +122,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#already{
+    font-family: manrope-medium;
 }
